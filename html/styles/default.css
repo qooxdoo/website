@@ -78,43 +78,43 @@ header {
 }
 
 @media (min-width:600px) {
-	
+
 	.logo-centered {
 		display:none;
 	}
-	
+
 	.logo-left {
 		display:block;
 	}
-	
+
 	.logo {
 		max-width:500px;
 	}
-	
+
 }
 
 @media (min-width:1024px) {
-	
+
 	header {
 		margin-top:0;
 		position:relative;
 		height:150px;
 		padding:0;
 	}
-	
+
 	nav::before {
 		content:'';
 		display:block;
 		width:640px;
 		position:absolute;
 		height:35px;
-		background:url(/images/nav-bracket.svg);
+		background:url(../images/nav-bracket.svg);
 		background-repeat:no-repeat;
 		background-size:cover;
 		top:26px;
 		right:-2rem;
 	}
-	
+
 	.version {
 		position:absolute;
 		right:2rem;
@@ -123,7 +123,7 @@ header {
 		width:150px;
 		margin:0;
 	}
-	
+
 	.logo {
 		max-width:265px;
 		position:absolute;
@@ -174,7 +174,7 @@ footer ul li:first-child {
 }
 
 @media (min-width:1024px) {
-	
+
 	.footer-wrapper {
 		display:grid;
 		grid-template-columns:repeat(4,1fr);
@@ -183,7 +183,7 @@ footer ul li:first-child {
 		max-width:1200px;
 		margin:0 auto;
 	}
-		
+
 }
 
 
@@ -221,5 +221,5 @@ footer ul li:first-child {
 
 .scrollToTop:hover,
 .scrollToTop:focus {
-  
+
 }
