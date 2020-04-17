@@ -30,3 +30,12 @@
         bottom: -1vw;
     }
 }
+
+/*
+ * Old Edge specific corrections
+ */
+ @supports (-ms-ime-align:auto) {
+    nav {
+        margin-top:44px;
+    }
+ }
