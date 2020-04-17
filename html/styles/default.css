@@ -223,3 +223,24 @@ footer ul li:first-child {
 .scrollToTop:focus {
 
 }
+
+/*
+====================================================
+                   Links
+====================================================
+*/
+section.hero a,
+section.hero a:visited,
+section.hero a:hover,
+section.hero a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+div.description a,
+div.description a:visited,
+div.description a:hover,
+div.description a:link {
+	color: inherit;
+	text-decoration: underline;
+}
