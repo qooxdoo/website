@@ -6,42 +6,40 @@
   <title>Qooxdoo apps in production</title>
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen"/>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css"/>
+
+  <!-- UIkit JS -->
+  <script
+      src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
+  <script
+      src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
   <style type="text/css">
-
-    body {
-      font-family: 'IBM Plex Sans', sans-serif;
-      line-height:1.2;
-      font-size:16px;
+    /* override */
+    a,h1, h2, h3 {
+      color: #778ae7 !important;
     }
-
-    .flex-caption {
-      bottom: 0;
-      background: rgba(0, 0, 0, .5);
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
-      font-size: 14px;
-      line-height: 18px;
-    }
-
-    li.css a {
-      border-radius: 0;
-    }
-
   </style>
 </head>
 
-<body class="loading">
-<div id="container" class="cf">
-<div id="main" role="main">
-  <section class="slider">
-    <div class="flexslider">
-      <ul class="slides">
-        <li>
-          <img
-              src="./img/70419654-89de6680-1a6e-11ea-9a1e-e09a5dab8e61.png"
-              alt="screenshot-a" style="max-width:100%;">
-          <div class="flex-caption">
+<body>
+<h1 style="text-align: center">Powered by Qooxdoo...</h1>
+<div uk-slider="center: true; autoplay: true">
+  <a class="uk-position-center-left-out uk-slidenav-large" href="#" uk-slider-item="previous"></a>
+  <a class="uk-position-center-right-out uk-slidenav-large" href="#" uk-slider-item="next"></a>
+  <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  <div class="uk-position-relative uk-visible-toggle uk-slider-container" tabindex="-1">
+
+    <ul class="uk-slider-items uk-child-width-1-2@s uk-grid" >
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70419654-89de6680-1a6e-11ea-9a1e-e09a5dab8e61.png"
+                alt="screenshot-a">
+          </div>
+          <div class="uk-card-body">
             <h3>DataLife: Hospital Information System</h3>
             <p>DataLife is a hospital information system designed to
               support the management of healthcare institutions,
@@ -62,12 +60,16 @@
                            href="https://www.datalife.gr/">https://www.datalife.gr/</a>
             </p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70053015-d6d8bd80-15d4-11ea-8446-af448a6befe6.png"
-              alt="prems_blured" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70053015-d6d8bd80-15d4-11ea-8446-af448a6befe6.png"
+                alt="prems_blured">
+          </div>
+          <div class="uk-card-body">
             <p>App name: PREMS (The Plant REsource Management System)<br>
 
               This app is a <a href="https://www.qooxdoo.org/"
@@ -94,12 +96,16 @@
                    href="https://sourcesup.renater.fr/projects/elvis">https://sourcesup.renater.fr/projects/elvis</a>
             </p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70332310-929e2500-1841-11ea-80d6-30347757e48a.JPG"
-              alt="Editor" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70332310-929e2500-1841-11ea-80d6-30347757e48a.JPG"
+                alt="Editor">
+          </div>
+          <div class="uk-card-body">
             <p>o2S2PARC - Open Online Simulations for Stimulating
               Peripheral Activity to Relieve Conditions</p>
             <p>The <a href="https://osparc.io/" rel="nofollow">application</a>
@@ -128,13 +134,17 @@
               <a href="https://github.com/ITISFoundation/osparc-simcore/tree/master/services/web/client">Front-end
                 using qooxdoo</a></p>
           </div>
-        </li>
-        <li>
-          <img
-              alt="EduAnat2 screenshot"
-              src="https://www.creatis.insa-lyon.fr/~valette/public/project/eduanat2/featured_hu8684937c3e81b81cc700f0e8c08ddf0b_175994_720x0_resize_q90_lanczos.jpg"
-              style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                alt="EduAnat2 screenshot"
+                src="https://www.creatis.insa-lyon.fr/~valette/public/project/eduanat2/featured_hu8684937c3e81b81cc700f0e8c08ddf0b_175994_720x0_resize_q90_lanczos.jpg"
+               >
+          </div>
+          <div class="uk-card-body">
             <p>EduAnat2</p>
             <p>This program allows easy visualization of medical images, ideal
               for
@@ -153,12 +163,16 @@
               source code : <a href="https://github.com/valette/eduAnat2">https://github.com/valette/eduAnat2</a>
             </p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70333704-fa269580-187e-11ea-83cc-95e7a405a0d6.png"
-              alt="image" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70333704-fa269580-187e-11ea-83cc-95e7a405a0d6.png"
+                alt="image">
+          </div>
+          <div class="uk-card-body">
             <p>Our website: <a href="http://www.digisoftph.com/"
                                rel="nofollow">www.digisoftph.com</a></p>
             <p>Special thanks also to <strong><a
@@ -225,12 +239,16 @@
               </li>
             </ol>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70414150-81c7fc00-1a59-11ea-89ba-8d2cf425bbed.jpg"
-              alt="bibliograph" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70414150-81c7fc00-1a59-11ea-89ba-8d2cf425bbed.jpg"
+                alt="bibliograph">
+          </div>
+          <div class="uk-card-body">
             <h1>Bibliograph: Open Source Online Citation &amp; Library
               Management</h1>
             <p>Bibliograph is an application that lets you collect,
@@ -249,12 +267,16 @@
                   href="https://github.com/cboulanger/bibliograph">https://github.com/cboulanger/bibliograph</a>
             </p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70443088-81356280-1a65-11ea-9d73-5fa0ab03d2bb.png"
-              alt="iwsweb" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70443088-81356280-1a65-11ea-9d73-5fa0ab03d2bb.png"
+                alt="iwsweb">
+          </div>
+          <div class="uk-card-body">
             <p><a href="https://mutualink.net/"
                   rel="nofollow">Mutualink</a> <strong>IWS Web</strong>
               provides an incident-based highly intuitive graphical user
@@ -301,12 +323,16 @@
             <p>Website: <a rel="nofollow" href="https://mutualink.net/">https://mutualink.net/</a>
             </p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/70643602-e8d6e380-1c06-11ea-8bcc-35828789d0c5.png"
-              alt="Polaris" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/70643602-e8d6e380-1c06-11ea-8bcc-35828789d0c5.png"
+                alt="Polaris">
+          </div>
+          <div class="uk-card-body">
             <p>Polaris Aplive</p>
             <p>At Laboratorio Nebula of the UPNFM we develop Polaris
               Aplive, our Frontend application for students users for
@@ -316,12 +342,16 @@
               the country, resulting in a fundamental tool for the
               University activities.</p>
           </div>
-        </li>
-        <li>
-          <img
-              src="./img/74228156-2a941100-4cc0-11ea-8993-4204fe1e0a8e.png"
-              alt="image" style="max-width:100%;">
-          <div class="flex-caption">
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="./img/74228156-2a941100-4cc0-11ea-8993-4204fe1e0a8e.png"
+                alt="image">
+          </div>
+          <div class="uk-card-body">
             <p><strong>ReForm</strong> (by <a
                 href="https://www.sibitag.com/home"
                 rel="nofollow">SiBit</a>)<br>
@@ -333,26 +363,13 @@
               Software Office Asset.</p>
             </p>
           </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</div>
-</div>
-<!-- jQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!-- FlexSlider -->
-<script defer src="jquery.flexslider.js"></script>
+        </div>
+      </li>
+    </ul>
 
-<script type="text/javascript">
-  $(window).load(function(){
-    $('.flexslider').flexslider({
-      animation: "slide",
-      start: function(slider){
-        $('body').removeClass('loading');
-      }
-    });
-  });
-</script>
+
+  </div>
+
+</div>
 </body>
 </html>
