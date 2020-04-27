@@ -299,6 +299,10 @@ Dark blue/green: #006056
 	font-weight:200;
 }
 
+div.description .other-points a:link {
+	text-decoration: none;
+}
+
 .other-points li:nth-child(even) {
 	color:yellow;
 }
