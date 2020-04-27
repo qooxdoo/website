@@ -124,6 +124,11 @@ header {
 		margin:0;
 	}
 
+	.version a {
+		text-decoration: none;
+		color: inherit;
+	}
+
 	.logo {
 		max-width:265px;
 		position:absolute;
