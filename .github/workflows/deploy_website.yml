@@ -1,0 +1,27 @@
+name: Build and Deploy
+on:
+  # run when the master branch is updated
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-18.04
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Build
+        run: |
+          git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch .
+          cp -R qooxdoo-compiler/source/resource/qx/tool/schema/ ./html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
