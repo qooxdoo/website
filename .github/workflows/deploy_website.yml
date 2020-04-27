@@ -17,7 +17,7 @@ jobs:
 
       - name: Build
         run: |
-          git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch .
+          git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./qooxdoo-compiler
           cp -R qooxdoo-compiler/source/resource/qx/tool/schema/ ./html
 
       - name: Deploy
