@@ -1,0 +1,41 @@
+/*
+ * IE11 specific corrections
+ */
+@media all and (min-width:1025px) and (-ms-high-contrast: none), (-ms-high-contrast: active)  {
+    svg.logo-left {
+        height: 75px;
+    }
+    
+    nav {
+        margin-top:44px;
+    }
+
+    svg.bracket {
+        height: 5vw;
+        bottom: -1vw;
+    }
+} 
+
+@media all and (max-width:1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    svg.logo-left {
+        height: 141px;
+    }
+
+    .nav-toggle-label::before {
+        top:0;
+    }
+
+    svg.bracket {
+        height: 9vw;
+        bottom: -1vw;
+    }
+}
+
+/*
+ * Old Edge specific corrections
+ */
+ @supports (-ms-ime-align:auto) {
+    nav {
+        margin-top:44px;
+    }
+ }
