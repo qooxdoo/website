@@ -1,0 +1,32 @@
+{
+  "name": "qooxdoo-website",
+  "version": "1.0.0",
+  "description": "Qooxdoo Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qooxdoo/website.git"
+  },
+  "author": "John Spackman, Christian Boulanger, Adam Bowyer, and others",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qooxdoo/website/issues"
+  },
+  "homepage": "https://github.com/qooxdoo/website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.3.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.5.0"
+  }
+}

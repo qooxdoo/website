@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<!-- saved from url=(0046)https://github.com/qooxdoo/qooxdoo/issues/9814 -->
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Qooxdoo apps in production</title>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <!-- UIkit CSS -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css"/>
 
-  <!-- UIkit JS -->
-  <script
-      src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
-  <script
-      src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
-  <style type="text/css">
-    /* override */
-    a, h2, h3 {
-      color: #778ae7 !important;
-    }
-  </style>
-</head>
+{% extends "layout-with-hero.html" %}
 
-<body>
-<h1 class="uk-heading-line uk-text-center"><span>Powered by <a href="http://www.qooxdoo.org">Qooxdoo</a></span></h1>
+{% block pageTitle %}Portfolio{% endblock %}
+{% block pageHeading %}Powered by Qooxdoo{% endblock %}
+
+{% block pageHeaderExtraScripts %}
+<!-- UIkit CSS -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css"/>
+
+<!-- UIkit JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
+
+<style type="text/css">
+  /* override */
+  a, h2, h3 {
+    color: #778ae7 !important;
+  }
+  .uk-card-body p {
+    color: black;
+  }
+</style>
+{% endblock %}
+
+
+{% block pageHeroBody %}
+<p>Here's a few of the many applications which are powered by Qooxdoo...</p>
+{% endblock %}
+
+{% block pageContentBody %}
 <div uk-slider="center: true; autoplay: true">
   <a class="uk-position-center-left-out uk-slidenav-large" href="#" uk-slider-item="previous"></a>
   <a class="uk-position-center-right-out uk-slidenav-large" href="#" uk-slider-item="next"></a>
@@ -36,7 +43,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/datalife.png"
+                src="images/portfolio/datalife.png"
                 alt="screenshot-a">
           </div>
           <div class="uk-card-body">
@@ -66,7 +73,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/prems.png"
+                src="images/portfolio/prems.png"
                 alt="prems_blured">
           </div>
           <div class="uk-card-body">
@@ -104,7 +111,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/osparc2.JPG"
+                src="images/portfolio/osparc2.JPG"
                 alt="Editor">
           </div>
           <div class="uk-card-body">
@@ -171,7 +178,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/sias.png"
+                src="images/portfolio/sias.png"
                 alt="image">
           </div>
           <div class="uk-card-body">
@@ -247,7 +254,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/bibliograph.jpg"
+                src="images/portfolio/bibliograph.jpg"
                 alt="bibliograph">
           </div>
           <div class="uk-card-body">
@@ -275,7 +282,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/mutualink.png"
+                src="images/portfolio/mutualink.png"
                 alt="iwsweb">
           </div>
           <div class="uk-card-body">
@@ -332,7 +339,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/polaris2.png"
+                src="images/portfolio/polaris2.png"
                 alt="Polaris">
           </div>
           <div class="uk-card-body">
@@ -351,7 +358,7 @@
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
             <img
-                src="img/reform2.png"
+                src="images/portfolio/reform2.png"
                 alt="image">
           </div>
           <div class="uk-card-body">
@@ -369,9 +376,64 @@
           </div>
         </div>
       </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="images/portfolio/sparuk1.png"
+                alt="SPAR UK Cloud Services">
+          </div>
+          <div class="uk-card-body">
+            <h2>SPAR UK</h2>
+            <p><strong>SPAR UK Cloud Services</strong> (by <a
+                href="https://www.zenesis.com"
+                rel="nofollow">Zenesis Limited</a>)<br>
+              The Cloud Services application platform is the ongoing replacement of internal IT software
+              systems at SPAR (UK), a national retailer with over 2,600 stores.  Front end development 
+              switched to Qooxdoo around 2010 and now encompases full stack development with Qooxdoo at 
+              its core.
+              </p>
+            <p>SPAR UK Cloud Services supports over 500 users from hundreds of companies, connecting suppliers,
+                wholesalers, retailers, store owners, product development consultants, auditors, design & marketing, 
+                and other consultancies together with SPAR UK's central office.
+              </p>
+            <img
+                src="images/portfolio/sparuk2.png"
+                alt="SPAR UK Cloud Services">
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img
+                src="images/portfolio/digitalsignage1.png"
+                alt="VisionMedia Digital Signage">
+          </div>
+          <div class="uk-card-body">
+            <h2>VisionMedia Digital Signage</h2>
+            <p><strong>VisionMedia Digital Signage</strong> (by <a
+                href="https://www.zenesis.com"
+                rel="nofollow">Zenesis Limited</a>)<br>
+              The VisionMedia Digital Signage platform has over 1,500 set top box installations, each of which 
+              connect to the Qooxdoo-based web services to download media and instructions.  The Qooxdoo based
+              control panel administers the content and facilities for each site, and the owners of each site 
+              (of which there are over 4,000 users) log in via a seperate Qooxdoo based members application to 
+              customise the content broadcast to their screen.
+              </p>
+            <img
+                src="images/portfolio/digitalsignage2.png"
+                alt="VisionMedia Digital Signage">
+            <img
+                src="images/portfolio/digitalsignage3.png"
+                alt="VisionMedia Digital Signage">
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
+
 <script type="application/javascript">
   // shuffle slider items
   let ul = document.querySelector('#slider-list');
@@ -379,5 +441,5 @@
     ul.appendChild(ul.children[Math.random() * i | 0]);
   }
 </script>
-</body>
-</html>
+
+{% endblock %}

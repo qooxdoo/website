@@ -1,0 +1,28 @@
+
+{% extends "outer-layout.html" %}
+
+{% block pageOuter %}
+  <section class="hero">
+    <div class="hero-container">
+      <h1>{% block pageHeading %}Page Heading{% endblock %}</h1>
+
+      {% block pageHeroBody %}
+      {% endblock %}
+      
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 189.805 19.388" class="{{ pageBracketClass }} bracket">
+          <path d="M0,19.388V18.9c0-2.734,0.834-4.95,2.5-6.65c1.667-1.7,4-2.55,7-2.55h73.885c2.934,0,5.15-0.917,6.65-2.75
+  c1.5-1.834,2.25-4.15,2.25-6.95h4.887c0,2.8,0.75,5.116,2.25,6.95c1.5,1.833,3.684,2.75,6.55,2.75h74.331c3,0,5.333,0.85,7,2.55
+  c1.666,1.7,2.5,3.916,2.5,6.65v0.488H0z"/>
+      </svg>
+    </div>
+  </section>
+  
+  <div id="page-content">
+    {% block pageContent %}
+      <div id="page-content-body">
+        {% block pageContentBody %}
+        {% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}

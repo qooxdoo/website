@@ -1,0 +1,265 @@
+@charset "utf-8";
+/* CSS Document */
+
+#home {
+  .trusted-by ul {
+  	list-style:none;
+  }
+  
+  .trusted-by li {
+  	display:inline;
+  }
+  
+  .trusted-by h3 {
+  	font-weight:400;
+  	text-transform:uppercase;
+  	font-size:0.8rem;
+  }
+  
+  .trusted-by-logos {
+  	display:flex;
+  	flex-wrap:wrap;
+  	justify-content:center;
+  }
+  
+  .trusted-by-logos li {
+  	padding:7px;
+  }
+  
+  @media (min-width:1024px) { /*hero only*/
+  
+  	.trusted-by {
+  		grid-column:2/3;
+  	}
+  
+  	.trusted-by h3 {
+  		margin-bottom:10px;
+  	}
+  
+  	.trusted-by-logos {
+  		display:block;
+  	}
+  
+  }
+  /*
+  =============================================================
+                          FEATURE BANDS
+  =============================================================
+  */
+  
+  /* All features */
+  
+  .feature-bar {
+  	padding:4rem 2rem 10rem 2rem;
+  	position:relative;
+  	text-align:center;
+  	/*apply gradients to all feature backgrounds*/
+  	background-image:url(../images/grad-yellow.png);
+  	background-blend-mode:overlay;
+  	background-repeat:repeat-x;
+  	background-position:bottom;
+  }
+  
+  .pic-container {
+  	width:calc(100vw - 4rem);
+  	margin:0 auto;
+  	max-width:640px;
+  }
+  
+  .pic {
+  	width:100%;
+  	padding-top:100%;
+  }
+  
+  
+  /* Computer */
+  .computer {
+  	background-image:url(../images/grad.png);
+  	background-blend-mode:overlay;
+  	background-color:#00ACC1;
+  }
+  
+  .computer-bracket {
+  	fill:#6AC728;
+  }
+  
+  .pic-computer {
+  	background:  url(../images/pic-computer-sm.jpg) center top / contain no-repeat ;
+  
+  }
+  
+  /* Components */
+  .components {
+  	background-image:url(../images/grad-yellow.png);
+  	background-blend-mode:overlay;
+  	background-color: #6AC728;
+  
+  }
+  
+  .components-bracket {
+  	fill:#D74315;
+  }
+  
+  .pic-components {
+  	background: url(../images/pic-keys-sm.jpg) center top / contain no-repeat;
+  }
+  
+  .components h2 {
+  	color:#006056;
+  }
+  
+  /* Oscilloscope */
+  .oscilloscope {
+  	background-image:url(../images/grad-yellow.png);
+  	background-blend-mode:overlay;
+  	background-color: #D74315;
+  }
+  
+  .oscilloscope-bracket {
+  	fill:#00ACC1;
+  }
+  
+  .pic-oscilloscope {
+  	background:url(../images/pic-oscilloscope-sm.jpg) center top / contain no-repeat;
+  }
+  
+  /* Books */
+  .books {
+  	background-image:url(../images/grad.png);
+  	background-blend-mode:overlay;
+  	background-color: #00ACC1;
+  }
+  
+  .books-bracket {
+  	fill:#6AC728;
+  }
+  
+  .pic-books {
+  	background: url(../images/pic-books-sm.jpg) center top / contain no-repeat;
+  }
+  
+  /* Tools */
+  .tools {
+  	background-image:url(../images/grad-yellow.png);
+  	background-blend-mode:overlay;
+  	background-color: #6AC728;
+  }
+  
+  .tools-bracket {
+  	fill:#D74315;
+  }
+  
+  .pic-tools {
+  	background: url(../images/pic-tools-sm.jpg) center top / contain no-repeat;
+  }
+  
+  .tools h2 {
+  	color:#006056;
+  }
+  
+  /* Hidden */
+  .hidden {
+  	background-color: #D74315;
+  }
+  
+  .hidden-bracket {
+  	fill:#00ACC1;
+  }
+  
+  .pic-hidden {
+  	background: url(../images/pic-hidden-sm.jpg) center top / contain no-repeat;
+  }
+  
+  /* Sink */
+  .sink {
+  	background-image:url(../images/grad.png);
+  	background-blend-mode:overlay;
+  	background-color: #00ACC1;
+  }
+  
+  .sink-bracket {
+  	fill:#6AC728;
+  }
+  
+  .pic-sink {
+  	background: url(../images/pic-sink-sm.jpg) center top / contain no-repeat;
+  }
+  
+  .other-points {
+  	list-style:none;
+  }
+  
+  .other-points li {
+  	display:inline;
+  	color:#fff;
+  	font-size:1.5rem;
+  	font-weight:200;
+  }
+  
+  div.description .other-points a:link {
+  	text-decoration: none;
+  }
+  
+  div.description a,
+  div.description a:visited,
+  div.description a:hover,
+  div.description a:link {
+      color: inherit;
+      text-decoration: underline;
+  }
+  
+  .other-points li:nth-child(even) {
+  	color:yellow;
+  }
+  
+  /* Trebuchet */
+  .trebuchet {
+  	background-image:url(../images/grad-yellow.png);
+  	background-blend-mode:overlay;
+  	background-color:#6AC728;
+  }
+  
+  .pic-trebuchet {
+  	background: url(../images/pic-trebuchet-sm.jpg) center top / contain no-repeat;
+  }
+  
+  .trebuchet h2 {
+  	color:#006056;
+  }
+  
+  @media (min-width:1024px) {
+  
+  	.feature-container {
+  		display:grid;
+  		grid-template-columns: 45% 1fr;
+  		grid-gap:20px;
+  		max-width:1200px;
+  		margin:0 auto;
+  		text-align:left;
+  	}
+  
+  	.pic-container {
+  		grid-column:2/3;
+  		grid-row:1/2;
+      width:100%;
+      margin:0;
+      max-width:640px;
+  		min-width:320px;
+  	}
+  
+  	.description-container {
+  		grid-column:1/2;
+  		grid-row:1/2;
+  		display:flex;
+  		justify-content:center;
+  		align-items:center;
+  		flex-wrap:wrap;
+  	}
+  
+  	.description {
+  		margin:0 50px;
+  	}
+  
+  }
+}
+

@@ -1,0 +1,71 @@
+{% extends "outer-layout.html" %}
+
+{% block pageTitle %}Oops!{% endblock %}
+
+{% block pageHeaderExtraScripts %}
+  <script type="text/javascript">
+    var NS='';
+    var JSINFO = {
+      "id":"home",
+      "namespace":""
+    };
+  
+    /* redirect requests for old versions */
+    var vmap = {
+      "0.6": "0.6.7",
+      "0.7": "0.7.4",
+      "0.8": "0.8.3",
+      "1.0": "1.0.2",
+      "1.1": "1.1.2",
+      "1.2": "1.2.2",
+      "1.3": "1.3.1",
+      "1.4": "1.4.2",
+      "1.5": "1.5.1",
+      "1.6": "1.6.1",
+      "2.0": "2.0.4",
+      "2.1": "2.1.2",
+      "3.0": "3.0.2",
+      "3.5": "3.5.1",
+      "4.0": "4.0.2",
+      "4.1": "4.1.1",
+      "5.0": "5.0.2"
+    };
+  
+    var lmap = {
+      "http://www.qooxdoo.org/downloads" : "https://github.com/qooxdoo/qooxdoo/releases",
+      "http://www.qooxdoo.org/community" : "https://gitter.im/qooxdoo/qooxdoo"
+    };
+  
+    var href = window.location.href;
+    var archivePath = false;
+    var newHref = href.replace(
+        /\/(\d\.\d)(?:\.\d)?(\/|$)/,
+        function ( match,p1 ){
+            if (vmap[p1]){
+              archivePath=vmap[p1]+'/';
+            }
+            return match;
+        }
+    );
+    if (archivePath) {
+      window.location.href = "https://qooxdoo.github.com/qooxdoo.github.io/" + archivePath;
+    }
+    newHref = newHref.replace(/\/apiviewer$/,'/api/');
+    newHref = newHref.replace(/\/apiviewer\//,'/api/');
+    newHref = newHref.replace(/\/(devel|current)\/playground/,'/apps/playground');
+    newHref = newHref.replace(
+        /^(.+)$/,
+        function ( match,p1 ){
+            return ( lmap[p1] || match);
+        }
+    );
+    if (newHref != window.location.href){
+        window.location.href = newHref;
+    }
+  </script>
+{% endblock %}
+
+{% block pageOuter %}
+  <h1>This page does not exist.</h1>
+{% endblock %}
+

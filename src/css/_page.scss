@@ -1,0 +1,116 @@
+/*
+Blue header text: #4DD0E1
+Header BG: #3949AB
+Blue/Green: #00ACC1
+Green: #6AC728
+Orange: #D74315
+Yellow: #CDDC39
+Dark blue/green: #006056
+*/
+
+
+.hero {
+  background-color:#3949AB;
+  color:#e0e0e0;
+  font-weight:400;
+  padding:6rem 2rem 8rem 2rem;
+  background-image:url(../images/grad-dark-blue.png);
+  background-position:bottom center;
+  background-repeat:repeat-x;
+  position:relative;
+  text-align:center;
+    
+  a,
+  a:visited,
+  a:hover,
+  a:link {
+      text-decoration: none;
+      color: inherit;
+  }
+}
+
+.hero-features {
+  list-style:none;
+  margin:3rem 0;
+  font-weight:200;
+  font-size:1.5rem;
+  
+  li {
+    display:inline;
+    margin:0 2px;
+  }
+
+  li:nth-child(even) {
+    color:rgba(73,186,215,1);
+  }
+  
+  h1 {
+    font-size:3.2rem;
+    color:#4dd0e1;
+    font-weight:200;
+    line-height:1;
+  }
+}
+
+.bracket { /*all brackets*/
+  fill:#00ACC1;
+  width:80vw;
+  position:absolute;
+  bottom:-1px;
+  left:calc(50% - 40vw);
+}
+
+
+@media (min-width:1024px) { /*hero only*/
+  .hero-container {
+    max-width:1200px;
+    margin:0 auto;
+    display:grid;
+    grid-gap:20px;
+    grid-template-columns:1fr 2fr;
+    border-left:1px solid #4dd0e1;
+    padding-left:20px;
+  }
+
+  .hero {
+    text-align:left;
+      
+    h1 {
+      grid-column:2/3;
+      grid-row:1/2;
+      font-size:4.2rem;
+    }
+  }
+
+  .hero-features {
+    grid-column:1/2;
+    grid-row:1/3;
+    margin:0;
+    
+    .hero-features li {
+      display:block;
+      margin:10px 0;
+    }
+  }
+
+  .hero-features::before {
+    content:'';
+  }
+  
+  .bracket {
+      width:30vw;
+  }
+
+}
+
+
+#page-content {
+  background-color: #00ACC1;
+  padding: 20px 0;
+}
+
+#page-content-body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+

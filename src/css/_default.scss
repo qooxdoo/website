@@ -31,18 +31,72 @@ body {
 }
 
 h2 {
-	font-size:2.2rem;
-	font-weight:400;
-	color:#CDDC39;
-	line-height:1;
-	margin-bottom:1rem;
+    font-size:2.2rem;
+    font-weight:400;
+    color:#CDDC39;
+    line-height:1;
+    margin: 0.75rem 0;
+}
+
+h3 {
+    font-size:1.6rem;
+    font-weight:400;
+    color:#CDDC39;
+    line-height:1;
+    margin: 0.75rem 0;
+}
+
+h4 {
+    font-size:1.4rem;
+    font-weight:400;
+    color:#CDDC39;
+    line-height:1;
+    margin: 0.75rem 0 0 0;
 }
 
 p {
 	color:white;
 	font-weight:200;
 	font-size:1.4rem;
+	margin: 8px 0;
 }
+
+ul, ol {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+li {
+  color:white;
+  font-weight:200;
+  font-size: 1.3rem;
+  margin: 0.2rem 0;
+}
+
+blockquote {
+  padding: 20px 30px;
+  font-style: italic;
+}
+
+q {
+  font-style: italic;
+}
+
+hr {
+  margin: 5px 0;
+}
+
+table {
+  color:white;
+  font-weight:200;
+  font-size:1.2rem;
+  
+  caption {
+  }
+  td, th {
+  }
+}
+
 
 /*
 =================
@@ -60,6 +114,7 @@ header {
 	width:80vw;
 	margin:0 auto;
 	max-width:320px;
+	cursor: pointer;
 }
 
 .logo-left {
@@ -227,25 +282,4 @@ footer ul li:first-child {
 .scrollToTop:hover,
 .scrollToTop:focus {
 
-}
-
-/*
-====================================================
-                   Links
-====================================================
-*/
-section.hero a,
-section.hero a:visited,
-section.hero a:hover,
-section.hero a:link {
-	text-decoration: none;
-	color: inherit;
-}
-
-div.description a,
-div.description a:visited,
-div.description a:hover,
-div.description a:link {
-	color: inherit;
-	text-decoration: underline;
 }
