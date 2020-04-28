@@ -31,7 +31,7 @@
   <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
   <div class="uk-position-relative uk-visible-toggle uk-slider-container" tabindex="-1">
 
-    <ul class="uk-slider-items uk-child-width-1-2@s uk-grid" >
+    <ul class="uk-slider-items uk-child-width-1-2@s uk-grid" id="slider-list">
       <li>
         <div class="uk-card uk-card-default">
           <div class="uk-card-media-top">
@@ -372,5 +372,12 @@
     </ul>
   </div>
 </div>
+<script type="application/javascript">
+  // shuffle slider items
+  let ul = document.querySelector('#slider-list');
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
+</script>
 </body>
 </html>
