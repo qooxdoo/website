@@ -1,7 +1,7 @@
 {
     "caption": "Bibliograph: Open Source Online Citation &amp; Library Management",
     "images": [
-        "https://www.creatis.insa-lyon.fr/~valette/public/project/eduanat2/featured_hu8684937c3e81b81cc700f0e8c08ddf0b_175994_720x0_resize_q90_lanczos.jpg"
+        "images/portfolio/bibliograph.jpg"
     ],
     "website": "http://www.bibliograph.org/",
     "sourceCode": "https://github.com/cboulanger/bibliograph"
