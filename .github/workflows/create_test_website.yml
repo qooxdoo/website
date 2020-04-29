@@ -11,10 +11,13 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Create subdir name from PR number
+        id: get_subdir
+        run: echo ::set-output name=SUBDIR::PR_$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+
       - name: Build
         run: |
-          PR_NO=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-          SUBDIR="PR_${PR_NO}"
+          SUBDIR="${{ steps.get_subdir.outputs.SUBDIR }}"
           npm i
           npx gulp
           mv html $SUBDIR
@@ -35,5 +38,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: "The website in the version of this PR has been published at http://qooxdoo.org/website/PR_${pull request number}"
+          msg: "The website in the version of this PR has been published at http://qooxdoo.org/website/PR_${{ steps.get_subdir.outputs.SUBDIR }}"
           check_for_duplicate_msg: false  # OPTIONAL
