@@ -64,15 +64,13 @@
 <script type="text/javascript">
 $(function() {
   // shuffle slider items
-  /*
-  let portfolio = $("#portfolio-slider");
-  let portfolioNav = $("#portfolio-nav");
+  let portfolio = $("#portfolio-slider")[0];
+  let portfolioNav = $("#portfolio-nav")[0];
   for (var i = portfolio.children.length; i >= 0; i--) {
     let index = Math.round(Math.random() * i | 0);
     portfolio.appendChild(portfolio.children[index]);
     portfolioNav.appendChild(portfolioNav.children[index]);
   }
-  */
   
   $("#portfolio-slider").slick({
     slidesToShow: 1,
@@ -81,8 +79,21 @@ $(function() {
     fade: true,
     asNavFor: '.portfolio-nav'
   });
+  
+  var slidesToShow = 3;
+  var width = $(document).width();
+  if (width > 1100)
+    slidesToShow = 5;
+  else if (width > 800)
+    slidesToShow = 4;
+  else if (width > 700)
+    slidesToShow = 3;
+  else if (width > 600)
+    slidesToShow = 2;
+  else
+    slidesToShow = 1;
   $('#portfolio-nav').slick({
-    slidesToShow: 5,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     asNavFor: '.portfolio',
     dots: true,
