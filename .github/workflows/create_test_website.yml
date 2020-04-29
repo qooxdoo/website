@@ -2,7 +2,7 @@ name: Build and Deploy a Test Website
 on: pull_request
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-test:
     runs-on: ubuntu-18.04
     if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
@@ -13,15 +13,16 @@ jobs:
 
       - name: Build
         run: |
-          git clone https://github.com/qooxdoo/website.git --depth=1 --single-branch  ./website
           PR_NO=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
           SUBDIR="PR_${PR_NO}"
-          echo "::warning::Building site for Pull Request #${PR_NO}"
+          echo "::debug::Building site for Pull Request #${PR_NO}"
           npm i
           npx gulp
           mv html $SUBDIR
-          cp -R ./website/html/ .
-          echo "::warning::Publishing site in subdirectory $SUBDIR"
+          echo "::debug::Cloning current site"
+          git clone https://github.com/qooxdoo/website.git --depth=1 --branch=gh_pages  ./html
+          rm -rf ./html/.git
+          echo "::debug::Publishing site in subdirectory $SUBDIR"
           mv $SUBDIR ./html/
 
       - name: Deploy
