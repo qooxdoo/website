@@ -20,7 +20,7 @@ jobs:
           mv html $SUBDIR
           git clone https://github.com/qooxdoo/website.git --depth=1 --branch=gh-pages  ./html
           rm -rf ./html/.git
-          mv $SUBDIR ./html/
+          mv -f $SUBDIR ./html/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -28,7 +28,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./html
 
-      - name: Post message in Pull Request
+      - name: Post message to Pull Request
         uses: unsplash/comment-on-pr@master
         if: success()
         env:
