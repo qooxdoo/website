@@ -2,7 +2,7 @@
 {% extends "layout-with-hero.html" %}
 
 {% block pageTitle %}Portfolio{% endblock %}
-{% block pageBodyId %}portfolio{% endblock %}
+{% block pageBodyId %}portfolio-page{% endblock %}
 {% block pageHeading %}Powered by Qooxdoo{% endblock %}
 
 {% block pageHeaderExtraScripts %}
@@ -15,14 +15,12 @@
 
 
 {% block pageHeroBody %}
-<p>Here's a few of the many applications which are powered by Qooxdoo...</p>
+<p>Here's a few of the many applications which are...</p>
 {% endblock %}
 
 {% block pageContentBody %}
 
-<style>
-</style>
-  <div class="portfolio-nav">
+  <div id="portfolio-nav">
     {% for item in items %}
       <div class="portfolio-nav-frame">
         <div class="portfolio-nav-slide">
@@ -33,7 +31,7 @@
       </div>
     {% endfor %}
   </div>
-  <div class="portfolio">
+  <div id="portfolio-slider">
     {% for item in items %}
       <div class="portfolio-slide-frame">
         <div class="portfolio-slide">
@@ -65,14 +63,25 @@
 
 <script type="text/javascript">
 $(function() {
-  $(".portfolio").slick({
+  // shuffle slider items
+  /*
+  let portfolio = $("#portfolio-slider");
+  let portfolioNav = $("#portfolio-nav");
+  for (var i = portfolio.children.length; i >= 0; i--) {
+    let index = Math.round(Math.random() * i | 0);
+    portfolio.appendChild(portfolio.children[index]);
+    portfolioNav.appendChild(portfolioNav.children[index]);
+  }
+  */
+  
+  $("#portfolio-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
     asNavFor: '.portfolio-nav'
   });
-  $('.portfolio-nav').slick({
+  $('#portfolio-nav').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: '.portfolio',
