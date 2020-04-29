@@ -11,6 +11,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create PR Version of the website
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-app-url.com
+          environment: production
+
       - name: Build
         run: |
           PR_NO=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
@@ -27,3 +35,21 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./html
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-app-url.com
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-app-url.com
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
