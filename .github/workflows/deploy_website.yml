@@ -19,6 +19,8 @@ jobs:
         run: |
           git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./qooxdoo-compiler
           cp -R qooxdoo-compiler/source/resource/qx/tool/schema/ ./html
+          npm i
+          npx gulp
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
