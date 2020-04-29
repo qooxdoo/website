@@ -16,12 +16,12 @@ jobs:
           git clone https://github.com/qooxdoo/website.git --depth=1 --single-branch  ./website
           PR_NO=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
           SUBDIR="PR_${PR_NO}"
-          echo "Building site for Pull Request #${PR_NO}"
+          echo "::warning::Building site for Pull Request #${PR_NO}"
           npm i
           npx gulp
           mv html $SUBDIR
-          cp -R website/html .
-          echo "Publishing site in subdirectory $SUBDIR"
+          cp -R ./website/html/ .
+          echo "::warning::Publishing site in subdirectory $SUBDIR"
           mv $SUBDIR ./html/
 
       - name: Deploy
