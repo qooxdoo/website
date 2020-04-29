@@ -20,7 +20,7 @@ jobs:
           npx gulp
           mv html $SUBDIR
           echo "::debug::Cloning current site"
-          git clone https://github.com/qooxdoo/website.git --depth=1 --branch=gh_pages  ./html
+          git clone https://github.com/qooxdoo/website.git --depth=1 --branch=gh-pages  ./html
           rm -rf ./html/.git
           echo "::debug::Publishing site in subdirectory $SUBDIR"
           mv $SUBDIR ./html/
