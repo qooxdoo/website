@@ -11,14 +11,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create PR Version of the website
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          target_url: http://my-app-url.com
-          environment: production
-
       - name: Build
         run: |
           PR_NO=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
@@ -36,20 +28,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./html
 
-      - name: Update deployment status (success)
+      - name: Post message in Pull Request
+        uses: unsplash/comment-on-pr@master
         if: success()
-        uses: chrnorm/deployment-status@releases/v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: "${{ github.token }}"
-          target_url: http://my-app-url.com
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-
-      - name: Update deployment status (failure)
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: "${{ github.token }}"
-          target_url: http://my-app-url.com
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          msg: "The website in the version of this PR has been published at http://qooxdoo.org/website/PR_${pull request number}"
+          check_for_duplicate_msg: false  # OPTIONAL
