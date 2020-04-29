@@ -38,5 +38,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: "The website in the version of this PR has been published at http://qooxdoo.org/website/PR_${{ steps.get_subdir.outputs.SUBDIR }}"
+          msg: "The website in the version of this PR has been published at http://qooxdoo.org/website/${{ steps.get_subdir.outputs.SUBDIR }}"
           check_for_duplicate_msg: false  # OPTIONAL
