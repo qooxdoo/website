@@ -2,7 +2,8 @@
 
 This repo builds the static website; run `gulp` to compile or `gulp serve` to compile and run a webserver, watching for more changes.
 
-The static site generation is done by Nunjucks
+The static site generation is done by Nunjucks and Gulp.  **NOTE** the `html` directory is now generated entirely - please see the
+`src` directory.
 
 ## Adding to the portfolio
 
