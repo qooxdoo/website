@@ -1,0 +1,9 @@
+{
+    "caption": "PREMS (The Plant REsource Management System)",
+    "images": [
+        "images/portfolio/prems.png"
+    ],
+    "website": "https://www6.angers-nantes.inra.fr/irhs/Recherche/Bioinformatics-for-plant-Defense-Investigations",
+    "license": "CeCILL",
+    "sourceCode": "https://sourcesup.renater.fr/projects/prems"
+}

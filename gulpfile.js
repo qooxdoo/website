@@ -3,6 +3,8 @@ const { series, parallel } = require("gulp");
 const gulp = require("gulp");
 const browserSync = require("browser-sync").create();
 const concat = require("gulp-concat");
+const path = require("upath");
+const fs = require("fs");
 
 function sassTask(cb) {
   const sass = require("gulp-sass");
@@ -17,15 +19,110 @@ function sassTask(cb) {
   cb();
 }
 
+async function readJsonSafe(filename) {
+  let data = null;
+  try {
+    data = await fs.promises.readFile(filename, "utf8");
+  }catch(ex) {
+    if (ex.code == "ENOENT")
+      return null;
+    throw ex;
+  }
+
+  try {
+    data = data ? JSON.parse(data) : null;
+  }catch(ex) {
+    console.error(`Cannot parse JSON in ${filename}: ${ex}`);
+    return null;
+  }
+  return data;
+}
+
+async function readJson(filename) {
+  let data = await fs.promises.readFile(filename, "utf8");
+  data = data ? JSON.parse(data) : null;
+  return data;
+}
+
+async function readFileSafe(filename) {
+  try {
+    let data = await fs.promises.readFile(filename, "utf8");
+    return data || null;
+  }catch(ex) {
+    console.debug("Cannot read file: " + filename);
+    return null;
+  }
+}
+
+async function statSafe(filename) {
+  try {
+    return await fs.promises.stat(filename);
+  }catch(ex) {
+    if (ex.code == "ENOENT")
+      return null;
+    throw ex;
+  }
+}
+
 function nunjucksTask(cb) {
   const nunjucksRender = require("gulp-nunjucks-render");
   const data = require('gulp-data');
   
-  function getDataForFile(file) {
-    return {
-      example: 'data loaded for ' + file.relative
-    };
-  }  
+  async function getDataForFile(file) {
+    let base = path.relative("src/pages", file.base);
+    let name = file.basename.substring(0, file.basename.length - file.extname.length);
+    let ext = file.extname;
+    
+    let stat;
+    
+    let jsonName = path.join("src/data", base, name + ".json");
+    let json = await readJsonSafe(jsonName);
+    
+    let htmlName = path.join("src/data", base, name + ".html");
+    let html = await readJsonSafe(htmlName);
+    if (html) {
+      if (!json)
+        json = {};
+      json.body = html;
+    }
+    
+    let dirName = path.join("src/data", base, name);
+    stat = await statSafe(dirName);
+    if (stat && stat.isDirectory()) {
+      let files = await fs.promises.readdir(dirName, { withFileTypes: true });
+      if (!json)
+        json = {};
+      json.items = [];
+      for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        if (!file.isFile())
+          continue;
+        let itemExt = path.extname(file.name);
+        if (itemExt != ".json")
+          continue;
+        let itemName = file.name.substring(0, file.name.length - itemExt.length);
+        
+        let itemJson = await readJson(path.join(dirName, file.name));
+        let itemHtml = await readFileSafe(path.join(dirName, itemName + ".html"));
+        if (itemHtml)
+          itemJson.body = itemHtml;
+        json.items.push(itemJson);
+      }
+    }
+    if (json && json.randomisedItems && json.items) {
+      let items = json.items;
+      json.items = [];
+      while (items.length) {
+        let i = Math.floor(Math.random() * items.length);
+        let item = items[i];
+        items.splice(i, 1);
+        json.items.push(item);
+      }
+    }
+    
+    return json;
+  }
+  
   gulp
     .src("src/pages/**/*.html")
     .pipe(data(getDataForFile))
@@ -40,6 +137,13 @@ function imagesTask(cb) {
   gulp
     .src("src/images/**")
     .pipe(gulp.dest("html/images/"));
+  cb();
+}
+
+function scriptsTask(cb) {
+  gulp
+    .src("src/js/**")
+    .pipe(gulp.dest("html/js/"));
   cb();
 }
 
@@ -60,16 +164,17 @@ function watchTask(cb) {
   gulp.watch("src/pages/**/*.html", fn);
   gulp.watch("src/templates/**/*.html", fn);
   gulp.watch("src/css/*css", cb => {
-    sassTask();
-    browserSync.reload();
-    cb();
+    sassTask(() => {
+      browserSync.reload();
+      cb();
+    });
   });
   cb();
 }
 
 // Compile and start project.
-exports.default = series(sassTask, vendorScripts, nunjucksTask, imagesTask);
-exports.serve = series(sassTask, vendorScripts, nunjucksTask, imagesTask, watchTask, 
+exports.default = series(sassTask, vendorScripts, nunjucksTask, imagesTask, scriptsTask);
+exports.serve = series(sassTask, vendorScripts, nunjucksTask, imagesTask, scriptsTask, watchTask, 
     function(cb) {
       browserSync.init({
         server: "./html",

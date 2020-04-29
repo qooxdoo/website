@@ -1,0 +1,9 @@
+{
+    "caption": "o2S2PARC - Open Online Simulations for Stimulating Peripheral Activity to Relieve Conditions",
+    "images": [
+        "images/portfolio/osparc2.JPG"
+    ],
+    "website": "https://github.com/ITISFoundation/osparc-simcore",
+    "license": "MIT",
+    "sourceCode": "https://github.com/ITISFoundation/osparc-simcore"
+}

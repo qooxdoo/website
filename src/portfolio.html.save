@@ -1,0 +1,56 @@
+
+{% extends "layout-with-hero.html" %}
+
+{% block pageTitle %}Portfolio{% endblock %}
+{% block pageBodyId %}portfolio{% endblock %}
+{% block pageHeading %}Powered by Qooxdoo{% endblock %}
+
+{% block pageHeaderExtraScripts %}
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+// Add the new slick-theme.css if you want the default styling
+<link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+<script type="text/javascript" src="js/slick/slick.min.js"></script>
+{% endblock %}
+
+
+{% block pageHeroBody %}
+<p>Here's a few of the many applications which are powered by Qooxdoo...</p>
+{% endblock %}
+
+{% block pageContentBody %}
+
+<div id="portfolio-slider">
+  {% for item in items %}
+    <div class="portfolio-slide">
+      <div class="uk-card-media-top">
+        <img
+            src="{{ item.images[0] }}"
+            alt="{{ item.caption }}">
+      </div>
+      <div class="uk-card-body">
+        <h2>{{ item.caption }}</h2>
+        {{ item.body }}
+        {% if item.website %}
+          <p>Website: <a rel="nofollow" href="{{ item.website }}">{{ item.website }}</a></p>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script type="text/javascript">
+$(function() {
+  $("#portfolio-slider").slick({
+    idots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+});
+</script>
+{% endblock %}
+
