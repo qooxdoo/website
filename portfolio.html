@@ -783,7 +783,7 @@ $(function() {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    asNavFor: '.portfolio-nav'
+    asNavFor: '#portfolio-nav'
   });
   
   var slidesToShow = 3;
@@ -798,10 +798,11 @@ $(function() {
     slidesToShow = 2;
   else
     slidesToShow = 1;
+
   $('#portfolio-nav').slick({
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
-    asNavFor: '.portfolio',
+    asNavFor: '#portfolio-slider',
     dots: true,
     centerMode: true,
     focusOnSelect: true
