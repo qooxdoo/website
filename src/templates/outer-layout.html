@@ -28,6 +28,7 @@
     
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/website.js"></script>
     {% block pageHeaderExtraScripts %}
     {% endblock %}
   </head>
@@ -188,10 +189,22 @@
           <input type="checkbox" class="nav-toggle" id="nav-toggle">
           <nav>
               <ul>
+                  <li><a href="index.html">Home</a></li>
                   <li><a href="portfolio.html">Portfolio</a></li>
-                  <li><a href="http://www.qooxdoo.org/docs/#/README?id=getting-started">Installation</a></li>
-                  <li><a href="http://www.qooxdoo.org/docs/#/contents">Documentation</a></li>
-                  <li><a href="https://gitter.im/qooxdoo/qooxdoo">Community</a></li>
+                  <li>
+                      <a href="http://www.qooxdoo.org/docs/#/contents">Documentation</a>
+                      <ul>
+                        <li><a href="http://www.qooxdoo.org/docs/#/README?id=getting-started">Getting Started</a></li>                      
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="https://gitter.im/qooxdoo/qooxdoo">Community</a>
+                      <ul>
+                        <li><a href="https://gitter.im/qooxdoo/qooxdoo">Chat room</a></li>
+                        <li><a href="https://stackoverflow.com/questions/tagged/qooxdoo">Stackoverflow</a></li>
+                      </ul>
+                    
+                  </li>
               </ul>
           </nav>
           <label for="nav-toggle" class="nav-toggle-label">
@@ -200,6 +213,8 @@
         {% endblock %}
         <div class="version"><a href="https://github.com/qooxdoo/qooxdoo">v6.0.0-beta</a></div>
     </header>
+    <div id="header-spacer">
+    </div>
     <!--end header-->
     
     {% block pageOuter %}
@@ -249,32 +264,7 @@
             </ul>
         </div>
     </footer>
-
-
-    <!-- SCROLL TO TOP -->
-    <script>
-        $(document).ready(function(){
-
-            //Check to see if the window is top if not then display button
-            $(window).scroll(function(){
-                if ($(this).scrollTop() > 400) {
-                    $('.scrollToTop').fadeIn();
-                } else {
-                    $('.scrollToTop').fadeOut();
-                }
-            });
-
-            //Click event to scroll to top
-            $('.scrollToTop').click(function(){
-                $('html, body').animate({scrollTop : 0},800);
-                return false;
-            });
-
-            $(".logo").click(function() {
-              document.location = "index.html";
-            });
-        });
-    </script>
+    
     <a href="#" class="scrollToTop">Scroll To Top</a>
 </body>
 </html>

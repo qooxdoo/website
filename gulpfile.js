@@ -160,7 +160,18 @@ function watchTask(cb) {
     series(nunjucksTask, () => browserSync.reload())();
     cb();
   };
-  gulp.watch("src/images/**", imagesTask);
+  gulp.watch("src/images/**", cb => {
+    imagesTask(() => {
+      browserSync.reload();
+      cb();
+    });
+  });
+  gulp.watch("src/js/**", cb => {
+    scriptsTask(() => {
+      browserSync.reload();
+      cb();
+    });
+  });
   gulp.watch("src/pages/**/*.html", fn);
   gulp.watch("src/templates/**/*.html", fn);
   gulp.watch("src/css/*css", cb => {

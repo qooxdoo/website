@@ -5,16 +5,6 @@
 
 /*font-family: 'IBM Plex Sans', sans-serif;*/
 
-/*
-Blue header text: #4DD0E1
-Header BG: #3949AB
-Blue/Green: #00ACC1
-Green: #6AC728
-Orange: #D74315
-Yellow: #CDDC39
-Dark blue/green: #006056
-*/
-
 *,
 *::before,
 *::after {
@@ -33,7 +23,7 @@ body {
 h2 {
     font-size:2.2rem;
     font-weight:400;
-    color:#CDDC39;
+    color:$colorYellow;
     line-height:1;
     margin: 0.75rem 0;
 }
@@ -41,7 +31,7 @@ h2 {
 h3 {
     font-size:1.6rem;
     font-weight:400;
-    color:#CDDC39;
+    color:$colorYellow;
     line-height:1;
     margin: 0.75rem 0;
 }
@@ -49,7 +39,7 @@ h3 {
 h4 {
     font-size:1.4rem;
     font-weight:400;
-    color:#CDDC39;
+    color:$colorYellow;
     line-height:1;
     margin: 0.75rem 0 0 0;
 }
@@ -100,106 +90,12 @@ table {
 
 /*
 =================
-     HEADER
-=================
-*/
-
-header {
-	background-color:#e0e0e0;
-	margin-top:80px;
-	padding:4rem 2rem;
-}
-
-.logo {
-	width:80vw;
-	margin:0 auto;
-	max-width:320px;
-	cursor: pointer;
-}
-
-.logo-left {
-	display:none;
-}
-
-.version {
-	padding:1rem;
-	border:1px solid #8c8c8c;
-	border-radius:2rem;
-	width:100px;
-	text-align: center;
-	font-size:1.2rem;
-	font-weight:600;
-	margin:4rem auto 1rem auto;
-}
-
-@media (min-width:600px) {
-
-	.logo-centered {
-		display:none;
-	}
-
-	.logo-left {
-		display:block;
-	}
-
-	.logo {
-		max-width:500px;
-	}
-
-}
-
-@media (min-width:1024px) {
-
-	header {
-		margin-top:0;
-		position:relative;
-		height:150px;
-		padding:0;
-	}
-
-	nav::before {
-		content:'';
-		display:block;
-		width:640px;
-		position:absolute;
-		height:35px;
-		background:url(../images/nav-bracket.svg);
-		background-repeat:no-repeat;
-		background-size:cover;
-		top:26px;
-		right:-2rem;
-	}
-
-	.version {
-		position:absolute;
-		right:2rem;
-		top:55px;
-		padding:0.5rem;
-		width:150px;
-		margin:0;
-	}
-
-	.version a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.logo {
-		max-width:265px;
-		position:absolute;
-		left:2rem;
-		top:40px;
-	}
-}
-
-/*
-=================
      FOOTER
 =================
 */
 
 footer {
-	background-color:#006056;
+	background-color:$colorDarkBlueGreen;
 	padding:3rem 2rem;
 	text-align:center;
 	color:white;
@@ -258,7 +154,7 @@ footer ul li:first-child {
 	color:white;
 	width:75px;
 	height:75px;
-	background:linear-gradient(#3949AB,#283694);
+	background:linear-gradient($colorHeader,#283694);
   	align-items:center;
 	justify-content: center;
 	text-align:center;

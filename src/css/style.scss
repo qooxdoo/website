@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+/*
+Blue header text: #4DD0E1
+Header BG: #3949AB
+Blue/Green: #00ACC1
+Green: #6AC728
+Orange: #D74315
+Yellow: #CDDC39
+Dark blue/green: #006056
+*/
+
+$colorBlueHeader: #4DD0E1;
+$colorHeader: #3949AB;
+$colorHeaderGradient: #49BAD7;
+$colorHeaderBg: #e0e0e0;
+$colorBlueGreen: #00ACC1;
+$colorGreen: #6AC728;
+$colorOrange: #D74315;
+$colorYellow: #CDDC39;
+$colorDarkBlueGreen: #006056; 
+
 @import "default";
 @import "page";
 @import "home";

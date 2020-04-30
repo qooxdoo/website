@@ -76,11 +76,11 @@
   .computer {
   	background-image:url(../images/grad.png);
   	background-blend-mode:overlay;
-  	background-color:#00ACC1;
+  	background-color:$colorBlueGreen;
   }
   
   .computer-bracket {
-  	fill:#6AC728;
+  	fill:$colorGreen;
   }
   
   .pic-computer {
@@ -92,12 +92,12 @@
   .components {
   	background-image:url(../images/grad-yellow.png);
   	background-blend-mode:overlay;
-  	background-color: #6AC728;
+  	background-color: $colorGreen;
   
   }
   
   .components-bracket {
-  	fill:#D74315;
+  	fill:$colorOrange;
   }
   
   .pic-components {
@@ -105,18 +105,18 @@
   }
   
   .components h2 {
-  	color:#006056;
+  	color:$colorDarkBlueGreen;
   }
   
   /* Oscilloscope */
   .oscilloscope {
   	background-image:url(../images/grad-yellow.png);
   	background-blend-mode:overlay;
-  	background-color: #D74315;
+  	background-color: $colorOrange;
   }
   
   .oscilloscope-bracket {
-  	fill:#00ACC1;
+  	fill:$colorBlueGreen;
   }
   
   .pic-oscilloscope {
@@ -127,11 +127,11 @@
   .books {
   	background-image:url(../images/grad.png);
   	background-blend-mode:overlay;
-  	background-color: #00ACC1;
+  	background-color: $colorBlueGreen;
   }
   
   .books-bracket {
-  	fill:#6AC728;
+  	fill:$colorGreen;
   }
   
   .pic-books {
@@ -142,11 +142,11 @@
   .tools {
   	background-image:url(../images/grad-yellow.png);
   	background-blend-mode:overlay;
-  	background-color: #6AC728;
+  	background-color: $colorGreen;
   }
   
   .tools-bracket {
-  	fill:#D74315;
+  	fill:$colorOrange;
   }
   
   .pic-tools {
@@ -154,16 +154,16 @@
   }
   
   .tools h2 {
-  	color:#006056;
+  	color:$colorDarkBlueGreen;
   }
   
   /* Hidden */
   .hidden {
-  	background-color: #D74315;
+  	background-color: $colorOrange;
   }
   
   .hidden-bracket {
-  	fill:#00ACC1;
+  	fill:$colorBlueGreen;
   }
   
   .pic-hidden {
@@ -174,11 +174,11 @@
   .sink {
   	background-image:url(../images/grad.png);
   	background-blend-mode:overlay;
-  	background-color: #00ACC1;
+  	background-color: $colorBlueGreen;
   }
   
   .sink-bracket {
-  	fill:#6AC728;
+  	fill:$colorGreen;
   }
   
   .pic-sink {
@@ -216,7 +216,7 @@
   .trebuchet {
   	background-image:url(../images/grad-yellow.png);
   	background-blend-mode:overlay;
-  	background-color:#6AC728;
+  	background-color:$colorGreen;
   }
   
   .pic-trebuchet {
@@ -224,7 +224,7 @@
   }
   
   .trebuchet h2 {
-  	color:#006056;
+  	color:$colorDarkBlueGreen;
   }
   
   @media (min-width:1024px) {
