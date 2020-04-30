@@ -15,7 +15,7 @@
 	width:100%;
 	display:flex;
 	align-items: center;
-	background-color:#3949ab;
+	background-color:$colorHeader;
 }
 
 /*burger menu background*/
@@ -27,7 +27,7 @@
 	background-color:red;
 	position:absolute;
 	left :0;
-	background:linear-gradient(135deg,#3949ab,#49BAD7);
+	background:linear-gradient(135deg,$colorHeader,$colorHeaderGradient);
 }
 
 .nav-toggle-label:hover {

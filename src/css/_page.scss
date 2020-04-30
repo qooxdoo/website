@@ -1,17 +1,7 @@
-/*
-Blue header text: #4DD0E1
-Header BG: #3949AB
-Blue/Green: #00ACC1
-Green: #6AC728
-Orange: #D74315
-Yellow: #CDDC39
-Dark blue/green: #006056
-*/
-
 
 .hero {
-  background-color:#3949AB;
-  color:#e0e0e0;
+  background-color: $colorHeader;
+  color: $colorHeaderBg;
   font-weight:400;
   padding:6rem 2rem 8rem 2rem;
   background-image:url(../images/grad-dark-blue.png);
@@ -41,19 +31,19 @@ Dark blue/green: #006056
   }
 
   li:nth-child(even) {
-    color:rgba(73,186,215,1);
+    color: $colorHeaderGradient;
   }
   
   h1 {
     font-size:3.2rem;
-    color:#4dd0e1;
+    color: $colorBlueHeader;
     font-weight:200;
     line-height:1;
   }
 }
 
 .bracket { /*all brackets*/
-  fill:#00ACC1;
+  fill:$colorBlueGreen;
   width:80vw;
   position:absolute;
   bottom:-1px;
@@ -68,7 +58,7 @@ Dark blue/green: #006056
     display:grid;
     grid-gap:20px;
     grid-template-columns:1fr 2fr;
-    border-left:1px solid #4dd0e1;
+    border-left:1px solid $colorBlueHeader;
     padding-left:20px;
   }
 
@@ -105,7 +95,7 @@ Dark blue/green: #006056
 
 
 #page-content {
-  background-color: #00ACC1;
+  background-color: $colorBlueGreen;
   padding-bottom: 20px;
 }
 
