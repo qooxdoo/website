@@ -50,11 +50,19 @@
             {% if item.sourceCode %}
               <p>Source Code: <a rel="nofollow" href="{{ item.sourceCode }}">{{ item.sourceCode }}</a></p>
             {% endif %}
-            {% for imageIndex in range(1, item.images.length) %}
-                <img
-                  src="{{ item.images[imageIndex] }}"
-                  alt="{{ item.caption }}"> 
-            {% endfor %}
+            {% if item.images.length == 1 %}
+              <img
+                src="{{ item.images[0] }}"
+                alt="{{ item.caption }}"> 
+            {% elif item.images.length > 1 %}
+              <div class="portfolio-image-slider">
+                {% for image in item.images %}
+                  <img
+                    src="{{ image }}"
+                    alt="{{ item.caption }}"> 
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -100,6 +108,14 @@ $(function() {
     dots: true,
     centerMode: true,
     focusOnSelect: true
+  });
+  
+  $(".portfolio-image-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    autoplay: true,
+    arrows: true
   });
 });
 </script>

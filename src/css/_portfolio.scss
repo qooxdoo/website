@@ -38,10 +38,18 @@
       }
   }
   
+  .portfolio-image-slider {
+    margin: 0 40px;
+  }
+  
   .header-image {
     float: right;
     max-width: 300px;
     margin: 0 0 20px 20px;
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    color: $colorDarkBlueGreen;
   }
   @media screen and (min-width: 800px) {
     
