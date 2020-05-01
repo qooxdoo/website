@@ -90,24 +90,25 @@ $(function() {
   
   var slidesToShow = 3;
   var width = $(document).width();
-  if (width > 1100)
+  if (width > 1100) {
     slidesToShow = 5;
-  else if (width > 800)
+  } else if (width > 800) {
     slidesToShow = 4;
-  else if (width > 700)
+  } else if (width > 700) {
     slidesToShow = 3;
-  else if (width > 600)
+  } else if (width > 600) {
     slidesToShow = 2;
-  else
+  } else {
     slidesToShow = 1;
+  }
 
   $('#portfolio-nav').slick({
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     asNavFor: '#portfolio-slider',
     dots: true,
-    centerMode: true,
-    focusOnSelect: true
+    swipe: true,
+    swipeToSlide: true
   });
   
   $(".portfolio-image-slider").slick({
