@@ -24,6 +24,7 @@ jobs:
           cd html
           mkdir documentation
           ln -s documentation docs
+          ls -la
           cd ..
 
       - name: Deploy
