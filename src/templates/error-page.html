@@ -1,0 +1,15 @@
+
+{% extends "outer-layout.html" %}
+
+{% block pageTitle %}Oops!{% endblock %}
+
+{% block pageOuter %}
+  <div id="page-content">
+    {% block pageContent %}
+      <div id="page-content-body">
+        {% block pageContentBody %}
+        {% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}
