@@ -23,6 +23,7 @@ jobs:
           npx gulp
           cd html
           mkdir documentation
+          touch documentation/.create-this-directory
           ln -s documentation docs
           ls -la
           cd ..
