@@ -2,7 +2,9 @@
 
 {% block pageHeaderExtraScripts %}
   <script type="text/javascript">
-  
+
+    var loc = window.location;
+ 
     function mapPath(path) {
       /*
        * Handle explicit path mapping
@@ -59,19 +61,18 @@
           if (firstSegment.startsWith(key))
             return archivePath + versionMap[key] + remainder;
         }
-        return archivePath + path + remainder;
+        return loc.origin + archivePath + path + remainder;
       }
       
       path = path.replace(/\/apiviewer$/,'/api/');
       path = path.replace(/\/apiviewer\//,'/api/');
       path = path.replace(/\/(devel|current)\/playground/,'/apps/playground');
-      return path;
+      return loc.origin + path;
     }
 
-    var loc = window.location;
     var path = mapPath(loc.pathname);
     if (path != loc.pathname) {
-      loc.href = loc.origin + path + loc.search;
+      loc.href = path + loc.search;
     }
     
   </script>
