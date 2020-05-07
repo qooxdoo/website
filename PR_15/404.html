@@ -31,14 +31,21 @@
     <script type="text/javascript" src="/js/website.js"></script>
     
   <script type="text/javascript">
-  
+
+    var loc = window.location;
+ 
     function mapPath(path) {
       /*
        * Handle explicit path mapping
        */
       var urlMap = {
-          "/downloads" : "https://github.com/qooxdoo/qooxdoo/releases",
-          "/community" : "https://gitter.im/qooxdoo/qooxdoo"
+          "/downloads"          : "https://github.com/qooxdoo/qooxdoo/releases",
+          "/community"          : "https://gitter.im/qooxdoo/qooxdoo",
+          "/apps/playground"    : "https://qooxdoo.org/qxl.playground",    
+          "/apps/apiviewer"     : "https://qooxdoo.org/qxl.apiviewer",     
+          "/apps/demobrowser"   : "https://qooxdoo.org/qxl.demobrowser",   
+          "/apps/widgetbrowser" : "https://qooxdoo.org/qxl.widgetbrowser",
+          "/apps/mobileshowcase": "https://qooxdoo.org/qxl.mobileshowcase"
         };
       
       if (urlMap[path])
@@ -83,19 +90,13 @@
           if (firstSegment.startsWith(key))
             return archivePath + versionMap[key] + remainder;
         }
-        return archivePath + path + remainder;
+        return loc.origin + archivePath + path + remainder;
       }
-      
-      path = path.replace(/\/apiviewer$/,'/api/');
-      path = path.replace(/\/apiviewer\//,'/api/');
-      path = path.replace(/\/(devel|current)\/playground/,'/apps/playground');
-      return path;
     }
 
-    var loc = window.location;
-    var path = mapPath(loc.pathname);
+    var path = mapPath(loc.pathname) || loc.pathname;
     if (path != loc.pathname) {
-      loc.href = loc.origin + path + loc.search;
+      loc.href = path + loc.search;
     }
     
   </script>
@@ -258,8 +259,8 @@
           <input type="checkbox" class="nav-toggle" id="nav-toggle">
           <nav>
               <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="portfolio.html">Portfolio</a></li>
+                  <li><a href="/index.html">Home</a></li>
+                  <li><a href="/portfolio.html">Portfolio</a></li>
                   <li>
                       <a href="http://www.qooxdoo.org/docs/#/contents">Documentation</a>
                       <ul>
