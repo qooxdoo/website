@@ -21,7 +21,7 @@
        * to the active patch level (5.0 => 5.0.2)
        */
       var pos = path.indexOf("/", 1);
-      var firstSegment = pos > -1 ? path.substring(0, pos) : path;
+      var firstSegment = pos > -1 ? path.substring(1, pos) : path;
       var remainder = pos > -1 ? path.substring(pos) : "";
       
       var versionMap = {
