@@ -190,6 +190,19 @@ exports.serve = series(sassTask, vendorScripts, nunjucksTask, imagesTask, script
       browserSync.init({
         server: "./html",
         open: false
+      }, 
+      (err, bs) => {
+        bs.addMiddleware("*", (req, res) => {
+          let accept = req.headers.accept||"";
+          if (accept.match(/text\/html/)) {
+            const content_404 = fs.readFileSync("html/404.html");
+            res.write(content_404);
+            res.end();
+          } else {
+            res.statusCode = 404;
+            res.end();
+          }
+        });
       });
       cb();
     });
