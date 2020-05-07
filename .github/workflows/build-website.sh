@@ -17,6 +17,9 @@ npx gulp
 git clone https://github.com/qooxdoo/qooxdoo.git --depth=1 --single-branch ./tmp/qooxdoo
 cp -r ./tmp/qooxdoo/docs html
 
+git config --global user.email "deployment@qooxdoo.org"
+git config --global user.name "Automated Deployment for qooxdoo/website"
+
 git clone -c core.sshCommand="/usr/bin/ssh -i $ABSOLUTE_TMP/deploy-key" git@github.com:qooxdoo/qooxdoo.github.io.git --depth=1 ./tmp/qooxdoo.github.io
 
 rsync $RSYNC_OPTS ./tmp/qooxdoo/docs ./tmp/qooxdoo.github.io
