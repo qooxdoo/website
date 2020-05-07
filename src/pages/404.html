@@ -65,7 +65,7 @@
       }
     }
 
-    var path = mapPath(loc.pathname);
+    var path = mapPath(loc.pathname) || loc.pathname;
     if (path != loc.pathname) {
       loc.href = path + loc.search;
     }
