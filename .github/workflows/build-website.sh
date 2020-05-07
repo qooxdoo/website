@@ -1,11 +1,12 @@
 #!/bin/bash
 
+DEPLOY_PK="$1"
+
 RSYNC_OPTS="--recursive --perms --times --group --owner --devices --specials --verbose --copy-links --copy-dirlinks --delete"
-SECRET=$(cat ../keys/website/gh-pages)
 
 mkdir tmp 
-ABSOLUTE_DIR=$(echo "$(cd "$(dirname "$tmp")"; pwd -P)/$(basename "tmp")")
-echo "$SECRET" > ./tmp/deploy-key
+ABSOLUTE_TMP=$(echo "$(cd "$(dirname "$tmp")"; pwd -P)/$(basename "tmp")")
+echo "$DEPLOY_PK" > ./tmp/deploy-key
 chmod 0600 ./tmp/deploy-key
 
 git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./tmp/qooxdoo-compiler
@@ -16,7 +17,7 @@ npx gulp
 git clone https://github.com/qooxdoo/qooxdoo.git --depth=1 --single-branch ./tmp/qooxdoo
 cp -r ./tmp/qooxdoo/docs html
 
-git clone -c core.sshCommand="/usr/bin/ssh -i $ABSOLUTE_DIR/deploy-key" git@github.com:qooxdoo/qooxdoo.github.io.git --depth=1 ./tmp/qooxdoo.github.io
+git clone -c core.sshCommand="/usr/bin/ssh -i $ABSOLUTE_TMP/deploy-key" git@github.com:qooxdoo/qooxdoo.github.io.git --depth=1 ./tmp/qooxdoo.github.io
 
 rsync $RSYNC_OPTS ./tmp/qooxdoo/docs ./tmp/qooxdoo.github.io
 
@@ -36,4 +37,5 @@ fi
 
 git add .
 git commit -m 'automatic deployment from qooxdoo/website/.github/workflows/build-website.sh'
+git push
 

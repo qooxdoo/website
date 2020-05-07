@@ -15,18 +15,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Build
+      - name: Build and Deploy
         run: |
-          git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./qooxdoo-compiler
-          cp -R qooxdoo-compiler/source/resource/qx/tool/schema/ ./html
-          npm i
-          npx gulp
+          ./.github/workflows/build-website.sh "${{ secrets.WEBSITE_DEPLOY_PK }}"
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          external_repository: qooxdoo/qooxdoo.github.io
-          deploy_key: ${{ secrets.WEBSITE_DEPLOY_PK }}
-          publish_branch: master  
-          publish_dir: ./html
-          cname: qooxdoo.org
