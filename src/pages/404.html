@@ -63,11 +63,6 @@
         }
         return loc.origin + archivePath + path + remainder;
       }
-      
-      path = path.replace(/\/apiviewer$/,'/api/');
-      path = path.replace(/\/apiviewer\//,'/api/');
-      path = path.replace(/\/(devel|current)\/playground/,'/apps/playground');
-      return loc.origin + path;
     }
 
     var path = mapPath(loc.pathname);
