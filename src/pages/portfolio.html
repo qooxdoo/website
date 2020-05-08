@@ -8,9 +8,7 @@
 {% block pageHeaderExtraScripts %}
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
-<script type="text/javascript" src="js/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 {% endblock %}
 
 
@@ -108,7 +106,9 @@ $(function() {
     asNavFor: '#portfolio-slider',
     dots: true,
     swipe: true,
-    swipeToSlide: true
+    swipeToSlide: true,
+    centerMode: true,
+    focusOnSelect: true
   });
   
   $(".portfolio-image-slider").slick({
