@@ -7,8 +7,10 @@
  
     function mapPath(path) {
       if (path.endsWith("/")) {
-	     path = str.substr(0, str.length - 1);
+	     path = path.substr(0, path.length - 1);
 	  }
+
+    debugger;
       /*
        * Handle explicit path mapping
        */
@@ -70,7 +72,7 @@
     }
     var path = mapPath(loc.pathname);
     if (path != loc.pathname) {
-      loc.href = path + loc.search;
+      loc.href = path  + loc.hash + loc.search;
     }
     
   </script>
