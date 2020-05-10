@@ -6,6 +6,9 @@
     var loc = window.location;
  
     function mapPath(path) {
+      if (path.endsWith("/")) {
+	     path = str.substr(0, str.length - 1);
+	  }
       /*
        * Handle explicit path mapping
        */
