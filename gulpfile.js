@@ -102,7 +102,11 @@ function nunjucksTask(cb) {
           continue;
         let itemName = file.name.substring(0, file.name.length - itemExt.length);
         
-        let itemJson = await readJson(path.join(dirName, file.name));
+        let itemJson = await readJsonSafe(path.join(dirName, file.name));
+        if (!itemJson) {
+          console.error(`Unable to read ${path.join(dirName, file.name)}`);
+          continue;
+        }
         let itemHtml = await readFileSafe(path.join(dirName, itemName + ".html"));
         if (itemHtml)
           itemJson.body = itemHtml;

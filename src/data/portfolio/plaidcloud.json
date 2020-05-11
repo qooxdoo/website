@@ -1,9 +1,9 @@
 {
     "caption": "PlaidCloud: Better Data Analysis",
     "images": [
-        "images/portfolio/plaidcloud.png"
-        "images/portfolio/plaidcloud_2.png"
-        "images/portfolio/plaidcloud_3.png"
+        "images/portfolio/plaidcloud.png",
+        "images/portfolio/plaidcloud_2.png",
+        "images/portfolio/plaidcloud_3.png",
         "images/portfolio/plaidcloud_4.png"
     ],
     "website": "https://plaidcloud.com/",
