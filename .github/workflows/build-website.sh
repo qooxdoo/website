@@ -10,7 +10,7 @@ echo "$DEPLOY_PK" > ./tmp/deploy-key
 chmod 0600 ./tmp/deploy-key
 
 git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./tmp/qooxdoo-compiler
-cp -R tmp/qooxdoo-compiler/source/resource/qx/tool/schema/ ./html
+cp -R tmp/qooxdoo-compiler/source/resource/qx/tool/schema ./html
 npm i
 npx gulp
 
