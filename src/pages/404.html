@@ -4,7 +4,7 @@
   <script type="text/javascript">
 
     var loc = window.location;
- 
+
     function mapPath(path) {
       if (path.endsWith("/")) {
 	     path = path.substr(0, path.length - 1);
@@ -15,32 +15,33 @@
        * Handle explicit path mapping
        */
       var urlMap = {
-          "/downloads"          : "https://github.com/qooxdoo/qooxdoo/releases",
-          "/community"          : "https://gitter.im/qooxdoo/qooxdoo",
-          "/apps/playground"    : "https://qooxdoo.org/qxl.playground",    
-          "/apps/apiviewer"     : "https://qooxdoo.org/qxl.apiviewer",     
-          "/apps/demobrowser"   : "https://qooxdoo.org/qxl.demobrowser",   
-          "/apps/widgetbrowser" : "https://qooxdoo.org/qxl.widgetbrowser",
-          "/apps/packagebrowser": "https://qooxdoo.org/qxl.packagebrowser",
-          "/apps/mobileshowcase": "https://qooxdoo.org/qxl.mobileshowcase",
-	  "/current/playground" : "https://qooxdoo.org/qxl.playground",  
-	  "/devel/playground" 	: "https://qooxdoo.org/qxl.playground",
-	  "/current/api" 	: "https://qooxdoo.org/qxl.apiviewer",  
-	  "/devel/api" 		: "https://qooxdoo.org/qxl.apiviewer",   	      
-        };
-      
+        "/downloads"          : "https://github.com/qooxdoo/qooxdoo/releases",
+        "/community"          : "https://gitter.im/qooxdoo/qooxdoo",
+        "/docs"               : "https://qooxdoo.org/documentation",
+        "/apps/playground"    : "https://qooxdoo.org/qxl.playground",
+        "/apps/apiviewer"     : "https://qooxdoo.org/qxl.apiviewer",
+        "/apps/demobrowser"   : "https://qooxdoo.org/qxl.demobrowser",
+        "/apps/widgetbrowser" : "https://qooxdoo.org/qxl.widgetbrowser",
+        "/apps/packagebrowser": "https://qooxdoo.org/qxl.packagebrowser",
+        "/apps/mobileshowcase": "https://qooxdoo.org/qxl.mobileshowcase",
+        "/current/playground" : "https://qooxdoo.org/qxl.playground",
+        "/devel/playground" 	: "https://qooxdoo.org/qxl.playground",
+        "/current/api" 	      : "https://qooxdoo.org/qxl.apiviewer",
+        "/devel/api" 		      : "https://qooxdoo.org/qxl.apiviewer",
+      };
+
       if (urlMap[path])
         return urlMap[path];
-      
+
       /*
        * Look for version numbers in the first part of the path, eg
-       * "/5.0.2/blah...".  Also map the major/minor version numbers 
+       * "/5.0.2/blah...".  Also map the major/minor version numbers
        * to the active patch level (5.0 => 5.0.2)
        */
       var pos = path.indexOf("/", 1);
       var firstSegment = pos > -1 ? path.substring(1, pos) : path;
       var remainder = pos > -1 ? path.substring(pos) : "";
-      
+
       var versionMap = {
         "0.6": "0.6.7",
         "0.7": "0.7.4",
@@ -79,7 +80,7 @@
     if (path != loc.pathname) {
       loc.href = path  + loc.hash + loc.search;
     }
-    
+
   </script>
 {% endblock %}
 
