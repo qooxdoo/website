@@ -21,6 +21,9 @@ echo ">>> Adding json-schema files..."
 git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./tmp/qooxdoo-compiler
 rsync $RSYNC_OPTS ./tmp/qooxdoo-compiler/source/resource/qx/tool/schema ./tmp/qooxdoo.github.io
 
+echo ">>> Removing PR versions..."
+rm -rf ./tmp/qooxdoo.github.io/PR_*
+
 echo ">>> Synchronzing website content..."
 cd html
 rsync $RSYNC_OPTS \
