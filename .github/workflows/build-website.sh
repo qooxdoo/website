@@ -2,7 +2,7 @@
 
 DEPLOY_PK="$1"
 RSYNC_OPTS="--recursive --perms --times --group --owner --devices --specials --verbose --copy-links --copy-dirlinks --delete"
-mkdir tmp 
+mkdir tmp
 ABSOLUTE_TMP=$(echo "$(cd "$(dirname "$tmp")"; pwd -P)/$(basename "tmp")")
 echo "$DEPLOY_PK" > ./tmp/deploy-key
 chmod 0600 ./tmp/deploy-key
@@ -25,7 +25,7 @@ echo ">>> Synchronzing website content..."
 cd html
 rsync $RSYNC_OPTS \
     --exclude=docs \
-    --exclude=schema \    
+    --exclude=schema \
     --exclude=.git \
     --exclude=.nojekyll \
     --exclude=CNAME \
