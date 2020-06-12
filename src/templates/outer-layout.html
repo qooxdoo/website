@@ -1,41 +1,40 @@
 <!doctype html>
 {% import 'globals.html' as globals %}
 
-{% macro menu_home() %}
-  <li><a href="http://www.qooxdoo.org/about.html">About Qooxdoo</a></li>
-  <li><a href="http://www.qooxdoo.org/team.html">Meet the team</a></li>
+{% macro menu_see_in_action() %}
+  <li><a href="http://qooxdoo.org/portfolio.html">Real-life examples</a></li>
+  <li><a href="http://qooxdoo.org/qxl.playground">Interactive Playground</a></li>
+  <li><a href="http://qooxdoo.org/qxl.demobrowser">Demos</a></li>
+  <li><a href="http://qooxdoo.org/qxl.widgetbrowser">Widget Browser</a></li>
+  <li><a href="http://qooxdoo.org/qxl.packagebrowser/#">Add-on Packages</a></li>
+  <li><a href="http://qooxdoo.org/qxl.tutorial/#">Live tutorial</a></li>
+  <li><a href="http://qooxdoo.org/qxl.testtapper/#">Testrunner</a></li>
 {% endmacro %}
 
-{% macro menu_development() %}
+{% macro menu_docs_dev() %}
+  <li><a href="http://qooxdoo.org/docs/#/README?id=getting-started">Getting Started</a></li>
+  <li><a href="http://qooxdoo.org/qxl.apiviewer/#">API</a></li>
+  <li><a href="http://qooxdoo.org/docs/#/development/">Development</a></li>
+  <li><a href="http://qooxdoo.org/docs/#/communication/">Communication</a></li>
+  <li><a href="http://qooxdoo.org/docs/#/mobile/">Mobile</a></li>
+  <li><a href="http://qooxdoo.org/docs/#/server/">Server</a></li>
   <li><a href="https://github.com/qooxdoo">Source Code on GitHub</a></li>
   <li><a href="https://github.com/qooxdoo/qooxdoo/issues">Issues</a></li>
-  <li><a href="http://www.qooxdoo.org/qxl.playground">Interactive Playground</a></li>
-  <li><a href="http://www.qooxdoo.org/qxl.packagebrowser/#">Add-on Packages</a></li>
-  <li><a href="http://www.qooxdoo.org/qxl.demobrowser">Demos</a></li>
-  <li><a href="http://www.qooxdoo.org/qxl.widgetbrowser">Widgets</a></li>
-  <li><a href="https://github.com/qooxdoo/qooxdoo/blob/master/LICENSE">License</a></li>
-{% endmacro %}
-
-{% macro menu_docs() %}
-  <li><a href="http://www.qooxdoo.org/docs/#/about?id=about-qooxdoo">About</a></li>
-  <li><a href="http://www.qooxdoo.org/docs/#/README?id=getting-started">Getting Started</a></li>
-  <li><a href="http://www.qooxdoo.org/qxl.apiviewer/#">API</a></li>
-  <li><a href="http://www.qooxdoo.org/docs/#/development/">Development</a></li>
-  <li><a href="http://www.qooxdoo.org/docs/#/communication/">Communication</a></li>
-  <li><a href="http://www.qooxdoo.org/docs/#/mobile/">Mobile</a></li>
-  <li><a href="http://www.qooxdoo.org/docs/#/server/">Server</a></li>
 {% endmacro %}
 
 {% macro menu_community() %}
   <li><a href="https://gitter.im/qooxdoo/qooxdoo">Chat room</a></li>
   <li><a href="https://stackoverflow.com/questions/tagged/qooxdoo">Stackoverflow</a></li>
   <li><a href="https://medium.com/@qooxdoo">Blog</a></li>
-{% endmacro %}
-
-{% macro menu_follow() %}
   <li><a href="https://www.facebook.com/qxdev/" class="facebook">Facebook</a></li>
   <li><a href="https://twitter.com/qooxdoo" class="twitter">Twitter</a></li>
-  <li><a href="https://medium.com/feed/qooxdoo" class="rss">RSS</a></li>
+{% endmacro %}
+
+{% macro menu_about() %}
+  <li><a href="http://qooxdoo.org/about.html">About Qooxdoo</a></li>
+  <li><a href="http://qooxdoo.org/team.html">Meet the team</a></li>
+  <li><a href="https://github.com/qooxdoo/qooxdoo/blob/master/LICENSE">License</a></li>
+  <li><a href="http://qooxdoo.org/status">Build Status</a></li>
 {% endmacro %}
 
 <html>
@@ -228,30 +227,28 @@
           <nav>
               <ul>
                   <li>
-                    <a href="index.html">Home</a>
-                    <ul>
-                      {{ menu_home() }}
-                    </ul>
-                  </li>
-                  <li><a href="portfolio.html">Portfolio</a></li>
-                  <li>
-                      <a href="https://github.com/qooxdoo/qooxdoo">Development</a>
+                      <a href="portfolio.html">See it in action</a>
                       <ul>
-                        {{ menu_development() }}
+                        {{ menu_see_in_action() }}
                       </ul>
                   </li>
                   <li>
-                      <a href="http://www.qooxdoo.org/docs/#/contents">Documentation</a>
+                      <a href="http://qooxdoo.org/docs/#/contents">Docs and Development</a>
                       <ul>
-                        {{ menu_docs() }}
+                        {{ menu_docs_dev() }}
                       </ul>
                   </li>
                   <li>
                       <a href="https://gitter.im/qooxdoo/qooxdoo">Community</a>
                       <ul>
                         {{ menu_community() }}
-                        <li><a href="#follow">Follow</a></li>
                       </ul>
+                  </li>
+                  <li>
+                    <a href="about.html">About</a>
+                    <ul>
+                      {{ menu_about() }}
+                    </ul>
                   </li>
               </ul>
           </nav>
@@ -278,22 +275,22 @@
 
     <footer>
         <div class="footer-wrapper">
-            <ul class="footer-home">
-              <li>Home</li>
-              {{ menu_home() }}
+            <ul class="footer-about">
+              <li>About</li>
+              {{ menu_about() }}
             </ul>
-            <ul class="footer-development">
-              <li>Development</li>
-              {{ menu_development() }}
+            <ul class="footer-apps">
+              <li>See it in action</li>
+              {{ menu_see_in_action() }}
             </ul>
             <ul class="footer-docs">
               <li>Docs</li>
-              {{ menu_docs() }}
+              {{ menu_docs_dev() }}
             </ul>
-            <ul id="follow" class="footer-community">
+            <ul class="footer-community">
               <li>Community</li>
               {{ menu_community() }}
-              {{ menu_follow() }}
+              <li><a href="https://medium.com/feed/qooxdoo" class="rss">RSS</a></li>
             </ul>
         </div>
     </footer>
