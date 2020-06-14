@@ -1,0 +1,62 @@
+{% extends "outer-layout.html" %}
+
+{% block pageTitle %}About Qooxdoo{% endblock %}
+{% block pageBodyId %}about{% endblock %}
+
+{% block pageContent %}
+
+<h1>About Qooxdoo</h1>
+
+<section id="developers">
+
+  <p>After getting a degree in physics and chemistry, Fritz Zaucker spent
+  some years in New York working on a PhD in environmental physics which
+  he received from the University of Heidelberg, Germany. After a couple
+  of years working in climate change research he returned to Europe and
+  led the IT support group of the Department of Electrical Engineering
+  and Information Technology at ETH Zurich. Occasionally Fritz is teaching
+  introductionary courses internet technologies and  databases and
+  since 2007 is managing director of <a href="https://www.oetiker.ch"
+  rel="nofollow">OETIKER+PARTNER AG</a>, Olten, Switzerland.</p>
+
+  <p>John Spackman is a life-long software developer, starting in C and
+  C++ before ending up in Java and Javascript, with a brief diversion
+  into Delphi. John builds software systems for corporates, sometimes
+  managing large quantities of data and code - John's company, Zenesis
+  Ltd, actively maintains around a million lines of code in production
+  systems. On his days off, John enjoys rebuilding rotary engines
+  and working on his small holding with his extended family of 4
+  generations, dogs, cats, sheep, pigs, geese, turkeys...and a horse.</p>
+
+  <p>Christian Boulanger is a Berlin-based social scientist, part-time
+  coder, and open source enthusiast (JavaScript/NodeJS/PHP). For his
+  personal needs, he developed Bibliograph, an online bibliographic
+  Data manager, based on Qooxdoo (<a rel="nofollow" target="_blank"
+  href="http://bibliograph.org">http://bibliograph.org</a>),
+  which is <a href="https://bibliograph.rewi.hu-berlin.de/"
+  rel="nofollow" target="_blank">now used</a> by
+  Humboldt-Universität zu Berlin's Law Faculty. Contact him at <a
+  href="mailto:info@bibliograph.org">info@bibliograph.org</a>.</p>
+
+  <p>Tobi Oetiker has a degree in Electrical Engineering from the ETH in
+  Zurich. He published hist first OpenSource software package in 1994. A
+  network monitoring script named MRTG which became quite popular back
+  in the day. Tobi lives in Switzerland and co-owns a small software
+  and sysadmin company. His favorite programming Languages are Perl and
+  JavaScript and he is still looking for an excuse todo a project in Rust.</p>
+
+  <p> Henner Kollmann has a degree in Electrical Engineering from the RWTH in
+  Aachen. He is working for <a href="https://www.aucos.de/" rel="nofollow">aucos
+  Ag</a> as senior software developer with Delphi, Java, Javascript, C++,
+  Qt and SQL. In his freetime he supports since 2010 the developing of <a
+  href="https://www.vzaweb.de/" rel="nofollow">VZAweb: web-based traffic
+  census data base</a> which is fully based on qooxdoo. </p> </section>
+
+<script>
+  var ul = document.querySelector('section');
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
+</script>
+
+{% endblock %}
