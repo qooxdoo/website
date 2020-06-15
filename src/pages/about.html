@@ -1,9 +1,11 @@
-{% extends "outer-layout.html" %}
+{% set pageBracketClass = "hero-bracket" %}
+{% extends "layout-with-hero.html" %} 
 
 {% block pageTitle %}About Qooxdoo{% endblock %}
+{% block pageHeading %}About Qooxdoo{% endblock %} 
 {% block pageBodyId %}about{% endblock %}
 
-{% block pageContent %}
+{% block pageContentBody %}
 
 <h1>About Qooxdoo</h1>
 
