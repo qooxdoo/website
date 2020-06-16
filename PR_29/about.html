@@ -285,101 +285,101 @@
         
 
 <article>
+  <p>Qooxdoo (pronounced ['kuksdu:]) is a universal JavaScript framework
+    for creating enterprise-grade single-page web applications. With its
+    class-based object orientation, Qooxdoo allows the code of even the
+    most complex applications well organized and manageable. The integrated
+    compiler produces single file applications ready for deployment.</p>
 
-  <div class="about">
-    <div>Qooxdoo (pronounced ['kuksdu:]) is a universal JavaScript framework
-      for creating enterprise-grade single-page web applications. With its
-      class-based object orientation, Qooxdoo allows the code of even the
-      most complex applications well organized and manageable. The integrated
-      compiler produces single file applications ready for deployment.</div>
+  <h2 id="framework">Framework</h2>
 
-    <h2 id="framework">Framework</h2>
+  <p>The Qooxdoo framework enhances the javascript language with a full-fledged,
+    class-based object-oriented system, including a powerful properties
+    system, interfaces, and mixins. Qooxdoo code is based on namespaces to
+    allow rigorous and scalable code structure, asy integration with other
+    libraries and existing user code. It comes with a
+    <a href="/apps/apiviewer" target="_blank">comprehensive API reference</a>
+    that is auto-generated from
+    Javadoc-like comments in the framework sourcecode.</p>
 
-    <div>The Qooxdoo framework enhances the javascript language with a full-fledged,
-      class-based object-oriented system, including a powerful properties
-      system, interfaces, and mixins. Qooxdoo code is based on namespaces to
-      allow rigorous and scalable code structure, asy integration with other
-      libraries and existing user code. It comes with a
-      <a href="/apps/apiviewer" target="_blank">comprehensive API reference</a>
-      that is auto-generated from
-      Javadoc-like comments in the framework sourcecode.</div>
+  <p>Qooxdoo programs are written in plain javascript; no new syntax is
+    introduced, and all the extra functionality is realized through clever
+    application of existing javascript abilities. In order to create an
+    application that can be loaded by the browser, the Qooxdoo source code
+    has to be processed by the Qooxdoo compiler.</p>
 
-    <div>Qooxdoo programs are written in plain javascript; no new syntax is
-      introduced, and all the extra functionality is realized through clever
-      application of existing javascript abilities. In order to create an
-      application that can be loaded by the browser, the Qooxdoo source code
-      has to be processed by the Qooxdoo compiler.</div>
+  <p>The Qooxdoo compiler
+  is a NodeJS-based application written in Qooxdoo itself. It loads
+  Qooxdoo source code and adds all the required framework components
+  necessary to create an application that is executable in the browser.</p>
 
-    <div>The Qooxdoo compiler
-    is a NodeJS-based application written in Qooxdoo itself. It loads
-    Qooxdoo source code and adds all the required framework components
-    necessary to create an application that is executable in the browser.</div>
+  <h2 id="gui-toolkit">GUI Toolkit</h2>
 
-    <h2 id="gui-toolkit">GUI Toolkit</h2>
+  <p> Despite being a pure JavaScript framework, Qooxdoo is on par with GUI
+    toolkits for desktop applications like Qt when it comes to advanced, yet easy
+    to implement, user interfaces. It offers a full-blown set of widgets that
+    are hardly distinguishable from elements of native desktop applications.
+    Full built-in support for keyboard navigation, focus, tab handling, and drag
+    &amp; drop is provided. Dimensions can be specified as static, auto-sizing,
+    stretching, percentage, weighted flex or min/max, or even as combinations
+    of those. All widgets are based on powerful and flexible layout managers
+    which are at the core of many of the advanced layout capabilities.</p>
 
-    <div> Despite being a pure JavaScript framework, Qooxdoo is on par with GUI
-      toolkits for desktop applications like Qt when it comes to advanced, yet easy
-      to implement, user interfaces. It offers a full-blown set of widgets that
-      are hardly distinguishable from elements of native desktop applications.
-      Full built-in support for keyboard navigation, focus, tab handling, and drag
-      &amp; drop is provided. Dimensions can be specified as static, auto-sizing,
-      stretching, percentage, weighted flex or min/max, or even as combinations
-      of those. All widgets are based on powerful and flexible layout managers
-      which are at the core of many of the advanced layout capabilities.</div>
+  <p>No HTML or CSS has to be used and augmented to define the interface.
+    The Qooxdoo developer does not even have to know CSS to style the
+    interface. Clean and easy-to-configure themes for appearance, colors,
+    borders, fonts and icons allow for complete themability.</p>
 
-    <div>No HTML or CSS has to be used and augmented to define the interface.
-      The Qooxdoo developer does not even have to know CSS to style the
-      interface. Clean and easy-to-configure themes for appearance, colors,
-      borders, fonts and icons allow for complete themability.</div>
+  <h2 id="communication">Communication</h2>
 
-    <h2 id="communication">Communication</h2>
+  <p>While being a client-side and server-agnostic solution, the Qooxdoo
+    project includes different communication facilities, and supports low-level
+    XMLHttpRequests (XHR) as well as an RPC API. An abstract transport
+    layer supports queues, timeouts and implementations via XHR, Iframes
+    and Scripts. Like the rest of Qooxdoo, it fully supports event-based
+    programming which greatly simplifies asynchronous communication.</p>
 
-    <div>While being a client-side and server-agnostic solution, the Qooxdoo
-      project includes different communication facilities, and supports low-level
-      XMLHttpRequests (XHR) as well as an RPC API. An abstract transport
-      layer supports queues, timeouts and implementations via XHR, Iframes
-      and Scripts. Like the rest of Qooxdoo, it fully supports event-based
-      programming which greatly simplifies asynchronous communication.</div>
+  <h2 id="development-tools">Development tools</h2>
 
-    <h2 id="development-tools">Development tools</h2>
+  <p>Qooxdoo is not only a library, but also comes
+    with a set of sophisticated tools. Some help with the development workflow,
+    such as the <a href="/documentation/#/development/cli/commands">command
+      line interface</a>. Others let you quickly get to know the widgets (such
+    as the <a href="/apps/widgetbrowser" target="_blank">widget browser</a>),
+    become fluent in the Qooxdoo API (such as the
+    <a href="/apps/apiviewer" target="_blank">API Viewer</a>), or to debug or demonstrate code snippets
+    (such as the <a href="/apps/playground" target="_blank">"Playground"</a>).
+  </p>
 
-    <div>Qooxdoo is not only a library, but also comes
-      with a set of sophisticated tools. Some help with the development workflow,
-      such as the <a href="/documentation/#/development/cli/commands">command
-        line interface</a>. Others let you quickly get to know the widgets (such
-      as the <a href="/apps/widgetbrowser" target="_blank">widget browser</a>),
-      become fluent in the Qooxdoo API (such as the
-      <a href="/apps/apiviewer" target="_blank">API Viewer</a>), or to debug or demonstrate code snippets
-      (such as the <a href="/apps/playground" target="_blank">"Playground"</a>).
-    </div>
+  <h2 id="package-system">Package</h2>
 
-    <h2 id="package-system">Package</h2>
-
-    <div>A versatile web framework wouldn't be complete without a package
-      system which allows modularizing and reusing code. Qooxdoo's
-      <a href="/documentation/#/development/cli/packages">package
-        system</a> is based on GitHub repos. Packages can be
-      installed and published very easily with the Qooxdoo CLI.</div>
+  <p>A versatile web framework wouldn't be complete without a package
+    system which allows modularizing and reusing code. Qooxdoo's
+    <a href="/documentation/#/development/cli/packages">package
+      system</a> is based on GitHub repos. Packages can be
+    installed and published very easily with the Qooxdoo CLI.</p>
 
 
-    <h2 id="history">History</h2>
+  <h2 id="history">History</h2>
 
-    <div> Qooxdoo was originally developed by one of the world's leading
-      web hosters: 1&amp;1 Internet (now part of United Internet AG). In
-      late 2015, the Qooxdoo framework with all its assets, was turned
-      over to the Qooxdoo association, located in Switzerland. Qooxdoo
-      development has, since then, been lead by a group of dedicated
-      developers congregating on <a href="https://gitter.im/qooxdoo/qooxdoo"
-      target="_blank">gitter</a> and <a href="https://github.com/qooxdoo/qooxdoo"
-      target="_blank">github</a> . Contributions are always
-      welcome.</div>
+  <p> Qooxdoo was originally developed by one of the world's leading
+    web hosters: 1&amp;1 Internet (now part of United Internet AG). In
+    late 2015, the Qooxdoo framework with all its assets, was turned
+    over to the Qooxdoo association, located in Switzerland. Qooxdoo
+    development has, since then, been lead by a group of dedicated
+    developers congregating on <a href="https://gitter.im/qooxdoo/qooxdoo"
+    target="_blank">gitter</a> and <a href="https://github.com/qooxdoo/qooxdoo"
+    target="_blank">github</a> . Contributions are always
+    welcome.</p>
 
-    <h2 id="contact">Contact</h2>
+  <h2 id="contact">Contact</h2>
 
-    <div class="address">qooxdoo.org<br> Aarweg 17<br> 4600 Olten<br> Switzerland</div><div>Email:
-    <a href="mailto:info@qooxdoo.org">info@qooxdoo.org</a>
-    </div>
-  </div>
+  <p class="address">qooxdoo.org<br>
+    Aarweg 17<br>
+    4600 Olten<br>
+    Switzerland<br>
+    Email: <a href="mailto:info@qooxdoo.org">info@qooxdoo.org</a>
+  </p>
 </article>
 
 
