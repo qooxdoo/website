@@ -43,12 +43,18 @@
       </div>
     </div>
     {% endfor %}
-  </div>
-  <div class="developer">
-    For all contributors to the Qooxdoo codebase since 2009, see
-    <a href="https://github.com/qooxdoo/qooxdoo/graphs/contributors">the GitHub contributor page</a>.
-  </div>
 </article>
+
+  <div class="developer {{ item._itemName}} description-container">
+    <div class="developer-headings">
+      <h2>All Contributors, Past and Present</h2>
+    </div>
+    <div class="image-frame" style="background-image: url(https://github.githubassets.com/images/modules/logos_page/Octocat.png); background-size: 100%">
+    </div>
+    <div class="developer-bio">
+        <p>For all contributors to the Qooxdoo codebase since 2009, see <a href="https://github.com/qooxdoo/qooxdoo/graphs/contributors">the GitHub contributor page</a>.</p>
+    </div>
+</div>
 
 <script>
   var ul = document.querySelector('.developers');
