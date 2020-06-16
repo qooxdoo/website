@@ -1,0 +1,30 @@
+.developer {
+    margin: 40px 100px;
+    color: white;
+    display: grid;
+    grid-template-columns: 240px;
+    
+    .developer-headings {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        
+        table {
+            margin: 0 0 20px 40px;
+            td, th {
+                padding: 3px 15px 3px 0;
+            }
+        }
+    }
+    .image-frame {
+        width: 200px;
+        height: 200px;
+        background: no-repeat center center;
+        grid-column: 1;
+        grid-row: 2;
+        
+    }
+    .developer-bio {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}

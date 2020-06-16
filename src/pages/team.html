@@ -1,0 +1,66 @@
+{% set pageBracketClass = "hero-bracket" %}
+{% extends "layout-with-hero.html" %}
+
+{% block pageTitle %}The Developers{% endblock %}
+{% block pageHeading %}The Developers{% endblock %}
+{% block pageBodyId %}team{% endblock %}
+
+{% block pageHeroBody %}
+<p>Qooxdoo is a community-lead, open-source project with a core team of developers</p>
+{% endblock %}
+
+{% block pageContentBody %}
+<article>
+  <div class="developers">
+    {% for item in items %}
+    <div class="developer {{ item._itemName}} description-container">
+      <div class="developer-headings">
+        <h2>{{ item.name }}</h2>
+        <table>
+          <tr>
+            <td>GitHub</td>
+            <td><a href="https://github.com/{{item._itemName}}" target="_blank">github.com/{{item._itemName}}</a></td>
+          </tr>
+          {% if item.company %}
+          <tr>
+            <td>Works For:</td>
+            <td>{{ item.company }}</td>
+          </tr>
+          {% endif %}
+          {% if item.website %}
+          <tr>
+            <td>Website:</td>
+            <td><a href="{{item.website}}" target="_blank">{{ item.website }}</a></td>
+          </tr>
+          {% endif %}
+        </table>
+      </div>
+
+      <div class="image-frame" style="background-image: url(https://avatars.githubusercontent.com/{{ item._itemName }}?size=200)">
+      </div>
+      <div class="developer-bio">
+        {{ item.body | safe }}
+      </div>
+    </div>
+    {% endfor %}
+</article>
+
+  <div class="developer {{ item._itemName}} description-container">
+    <div class="developer-headings">
+      <h2>All Contributors, Past and Present</h2>
+    </div>
+    <div class="image-frame" style="background-image: url(https://github.githubassets.com/images/modules/logos_page/Octocat.png); background-size: 100%">
+    </div>
+    <div class="developer-bio">
+        <p>For all contributors to the Qooxdoo codebase since 2009, see <a href="https://github.com/qooxdoo/qooxdoo/graphs/contributors">the GitHub contributor page</a>.</p>
+    </div>
+</div>
+
+<script>
+  var ul = document.querySelector('.developers');
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
+</script>
+
+{% endblock %}

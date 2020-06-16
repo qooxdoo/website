@@ -107,6 +107,7 @@ function nunjucksTask(cb) {
           console.error(`Unable to read ${path.join(dirName, file.name)}`);
           continue;
         }
+        itemJson._itemName = itemName;
         let itemHtml = await readFileSafe(path.join(dirName, itemName + ".html"));
         if (itemHtml)
           itemJson.body = itemHtml;
