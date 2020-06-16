@@ -7,6 +7,13 @@
     .developer-headings {
         grid-row: 1;
         grid-column: 1 / span 2;
+        
+        table {
+            margin: 0 0 20px 40px;
+            td, th {
+                padding: 3px 15px 3px 0;
+            }
+        }
     }
     .image-frame {
         width: 200px;

@@ -15,22 +15,25 @@
   {% for item in items %}
     <div class="developer {{ item._itemName}} description-container">
       <div class="developer-headings">
-      <h2>{{ item.name }}</h2>
-      {% if item.website or item.company %}
-      <h3>
-        {% if item.website %}
-        <a href="{{item.website}}" target="_blank">
-        {% endif %}
-        {% if item.company %}
-            {{item.company}}
-        {% else %}
-            {{item.website}}
-        {% endif %}
-        {% if item.website %}
-        </a>
-        {% endif %}
-      </h3>
-      {% endif %}
+        <h2>{{ item.name }}</h2>
+        <table>
+            <tr>
+                <td>GitHub</td>
+                <td><a href="https://github.com/{{item._itemName}}" target="_blank">github.com/{{item._itemName}}</a></td>
+            </tr>
+            {% if item.company %}
+            <tr>
+                <td>Works For:</td>
+                <td>{{ item.company }}</td>
+            </tr>
+            {% endif %}
+            {% if item.website %}
+            <tr>
+                <td>Website:</td>
+                <td><a href="{{item.website}}" target="_blank">{{ item.website }}</a></td>
+            </tr>
+            {% endif %}
+        </table>
       </div>
 
       <div class="image-frame" style="background-image: url(https://avatars.githubusercontent.com/{{ item._itemName }}?size=200)">
