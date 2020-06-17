@@ -42,7 +42,12 @@ it should be **just** the HTML fragment for the description, EG:
 
 Remember that the portfolio automatically adds your website and
 license details below the body, so there is no need to add that
-yourself (unless of course, there is something you prefer to clarify)
+yourself (unless of course, there is something you prefer to clarify).
 
+> :warning: If you use `target="_blank"` in any HTML anchor tags linking to a 
+> running instances of your applications, make sure to also add 
+> `rel="nofollow noopener noreferrer"`, since if you do not, GitHub's 
+> security rules might prevent your application from running in some browsers.
+> See [more on the security implications of `target="_blank"`](https://medium.com/sedeo/how-to-fix-target-blank-a-security-and-performance-issue-in-web-pages-2118eba1ce2f).
  
  

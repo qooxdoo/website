@@ -40,24 +40,24 @@
                 alt="{{ item.caption }}">
             {{ item.body | safe }}
             {% if item.author %}
-              <p>Author: <a rel="nofollow" href="{{ item.author }}">{{ item.author }}</a></p>
+              <p>Author: <a rel="nofollow noopener noreferrer" target="_blank" href="{{ item.author }}">{{ item.author }}</a></p>
             {% endif %}
             {% if item.website %}
-              <p>Website: <a rel="nofollow" href="{{ item.website }}">{{ item.website }}</a></p>
+              <p>Website: <a rel="nofollow noopener noreferrer" target="_blank"  href="{{ item.website }}">{{ item.website }}</a></p>
             {% endif %}
             {% if item.sourceCode %}
-              <p>Source Code: <a rel="nofollow" href="{{ item.sourceCode }}">{{ item.sourceCode }}</a></p>
+              <p>Source Code: <a rel="nofollow noopener noreferrer" target="_blank"  href="{{ item.sourceCode }}">{{ item.sourceCode }}</a></p>
             {% endif %}
             {% if item.images.length == 1 %}
               <img
                 src="{{ item.images[0] }}"
-                alt="{{ item.caption }}"> 
+                alt="{{ item.caption }}">
             {% elif item.images.length > 1 %}
               <div class="portfolio-image-slider">
                 {% for image in item.images %}
                   <img
                     src="{{ image }}"
-                    alt="{{ item.caption }}"> 
+                    alt="{{ item.caption }}">
                 {% endfor %}
               </div>
             {% endif %}
@@ -77,7 +77,7 @@ $(function() {
     portfolio.appendChild(portfolio.children[index]);
     portfolioNav.appendChild(portfolioNav.children[index]);
   }
-  
+
   $("#portfolio-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -85,7 +85,7 @@ $(function() {
     fade: true,
     asNavFor: '#portfolio-nav'
   });
-  
+
   var slidesToShow = 3;
   var width = $(document).width();
   if (width > 1100) {
@@ -110,7 +110,7 @@ $(function() {
     centerMode: true,
     focusOnSelect: true
   });
-  
+
   $(".portfolio-image-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
