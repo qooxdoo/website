@@ -1,0 +1,8 @@
+{
+    "company": "OETIKER+PARTNER AG",
+    "website": "https://www.oetiker.ch/en/",
+    "projects" : [
+         { "title": "oSPARC", "url": "https://qooxdoo.org/portfolio.html#osparc" },
+         { "title": "AGRAMMON", "url": "https://www.agrammon,ch/en" }
+    ]
+}

@@ -1,0 +1,55 @@
+{% set pageBracketClass = "hero-bracket" %}
+{% extends "layout-with-hero.html" %}
+
+{% block pageTitle %}Sponsors{% endblock %}
+{% block pageHeading %}Sponsors{% endblock %}
+{% block pageBodyId %}sponsors{% endblock %}
+
+{% block pageHeroBody %}
+<p>Multiple people and organisations have contributed to Qooxdoo</p>
+{% endblock %}
+
+{% block pageContentBody %}
+<article>
+  <div class="developers">
+    {% for item in items %}
+    <div class="developer {{ item._itemName}} description-container">
+      <div class="developer-headings">
+        <h2>{{ item.company }}</h2>
+        <table>
+          {% if item.website %}
+          <tr>
+            <td>Website:</td>
+            <td><a href="{{item.website}}" target="_blank" rel="nofollow noopener noreferrer">{{ item.website }}</a></td>
+          </tr>
+          {% endif %}
+          {% if item.projects %}
+          <tr>
+            <td>Projects:</td>
+            <td>
+              <ul>
+                {% for project in item.projects %}
+                  <li><a href="{{project.url}}" target="_blank" rel="nofollow noopener noreferrer">{{ project.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+          {% endif %}
+        </table>
+      </div>
+
+      <div class="developer-bio">
+        {{ item.body | safe }}
+      </div>
+    </div>
+    {% endfor %}
+</article>
+
+<script>
+  var ul = document.querySelector('.sponsors');
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
+</script>
+
+{% endblock %}
