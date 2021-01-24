@@ -1,0 +1,8 @@
+{
+    "company": "Zenesis Ltd",
+    "website": "https://www.zenesis.com",
+    "projects" : [
+         { "title": "SPAR UK", "url": "https://qooxdoo.org/portfolio.html#SPARUK" },
+         { "title": "VisionMedia", "url": "https://qooxdoo.org/portfolio.html#VisionMedia" }
+    ]
+}
