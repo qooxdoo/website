@@ -18,8 +18,8 @@ git config --global user.name "Automated Deployment for qooxdoo/website"
 git clone -c core.sshCommand="/usr/bin/ssh -i $ABSOLUTE_TMP/deploy-key" git@github.com:qooxdoo/qooxdoo.github.io.git --depth=1 ./tmp/qooxdoo.github.io
 
 echo ">>> Adding json-schema files..."
-git clone https://github.com/qooxdoo/qooxdoo-compiler.git --depth=1 --single-branch ./tmp/qooxdoo-compiler
-rsync $RSYNC_OPTS ./tmp/qooxdoo-compiler/source/resource/qx/tool/schema ./tmp/qooxdoo.github.io
+git clone https://github.com/qooxdoo/qooxdoo.git --depth=1 --single-branch ./tmp/qooxdoo
+rsync $RSYNC_OPTS ./tmp/qooxdoo/source/resource/qx/tool/schema ./tmp/qooxdoo.github.io
 
 echo ">>> Synchronzing website content..."
 cd html
