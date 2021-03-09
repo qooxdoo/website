@@ -3,6 +3,14 @@
     font-size: 1.4rem;
     font-weight: 200;
     text-decoration: none;
+    padding-bottom: 1ex;
+    padding-top: 1ex;
+    
+    list-style-type: none;
+
+    li:before {
+        content: '- ';
+    }
 
      a {
          text-decoration: none;
@@ -15,6 +23,8 @@
     font-size: 1.4rem;
     font-weight: 200;
     text-decoration: none;
+    padding-bottom: 1ex;
+    padding-top: 1ex;
 
     dt {
         font-weight: 400;
