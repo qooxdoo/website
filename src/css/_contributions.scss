@@ -12,10 +12,10 @@
         content: '- ';
     }
 
-     a {
-         text-decoration: none;
-         color: inherit;
-     }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .sponsorlist {
@@ -26,6 +26,11 @@
     padding-bottom: 1ex;
     padding-top: 1ex;
 
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+  
     dt {
         font-weight: 400;
     }
