@@ -23,6 +23,12 @@ $transitionToLargeTime: 0.25s;
     width: 108px;
     transition: $transitionToSmallTime;
   }
+  .donations {
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    width: 108px;
+    transition: $transitionToSmallTime;
+  }
   nav {
     li {
         font-size: 15px;
@@ -37,6 +43,9 @@ $transitionToLargeTime: 0.25s;
         transition: $transitionToSmallTime;
       }
       .version {
+        top: 8px;
+      }
+      .donations {
         top: 8px;
       }
     }
@@ -61,6 +70,11 @@ $transitionToLargeTime: 0.25s;
         top: -190px;
         right: -110px;
       }
+      .donations {
+        position: relative;
+        top: -190px;
+        right: -210px;
+      }
     }
     #header-spacer {
       height: 140px;
@@ -76,6 +90,13 @@ $transitionToLargeTime: 0.25s;
     transition: $transitionToLargeTime;
   }
   .version {
+    top: 55px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    width: 150px;
+    transition: $transitionToLargeTime;
+  }
+  .donations {
     top: 55px;
     font-size: 1.2rem;
     padding: 0.5rem;
@@ -156,6 +177,17 @@ header {
         font-weight:600;
         margin:4rem auto 1rem auto;
     }
+
+    .donations {
+        padding:1rem;
+        border:1px solid #8c8c8c;
+        border-radius:2rem;
+        width:100px;
+        text-align: center;
+        font-size:1.2rem;
+        font-weight:600;
+        margin:4rem auto 1rem auto;
+    }
 }
 
 
@@ -196,6 +228,15 @@ header {
             right:-2rem;
         }
   
+        .donations {
+            position:absolute;
+            right:12rem;
+            top:55px;
+            padding:0.5rem;
+            width:150px;
+            margin:0;
+        }
+    
         .version {
             position:absolute;
             right:2rem;
@@ -206,6 +247,11 @@ header {
         }
     
         .version a {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .donations a {
             text-decoration: none;
             color: inherit;
         }
