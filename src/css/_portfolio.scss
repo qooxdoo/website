@@ -1,4 +1,9 @@
 #portfolio-page {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
   #portfolio-slider {
     .portfolio-slide-frame {
         padding: 0 20px;
@@ -21,7 +26,8 @@
     .portfolio-slide-body p, .portfolio-slide-body li {
         color: black;
     }
-}
+
+  }
   #portfolio-nav {
       margin: 0 40px;
       .portfolio-nav-frame {
