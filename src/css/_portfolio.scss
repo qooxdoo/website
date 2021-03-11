@@ -1,4 +1,9 @@
 #portfolio-page {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
   #portfolio-slider {
     .portfolio-slide-frame {
         padding: 0 20px;
@@ -21,7 +26,8 @@
     .portfolio-slide-body p, .portfolio-slide-body li {
         color: black;
     }
-}
+
+  }
   #portfolio-nav {
       margin: 0 40px;
       .portfolio-nav-frame {
@@ -54,4 +60,26 @@
   @media screen and (min-width: 800px) {
     
   }
+}
+
+.testimoniallist {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-decoration: none;
+    padding-bottom: 1ex;
+    padding-top: 1ex;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+  
+    dt {
+        font-weight: 400;
+    }
+    dd {
+        margin-bottom : 1ex;
+        margin-left : 2em;
+    }
 }
