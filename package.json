@@ -24,9 +24,10 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-nunjucks-render": "^2.2.3",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "sass": "^1.34.1"
   }
 }

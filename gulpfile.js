@@ -7,7 +7,7 @@ const path = require("upath");
 const fs = require("fs");
 
 function sassTask(cb) {
-  const sass = require("gulp-sass");
+  const sass = require('gulp-sass')(require('sass'));
   const sourcemaps = require("gulp-sourcemaps");
   
   gulp.src("src/css/style.scss")
