@@ -1,13 +1,13 @@
 {
     "caption": "Ecliptic SCADA: Diagnostic and Control System",
     "images": [
-        "images/portfolio/ecliptic-scada-schema.jpg",
-        "images/portfolio/ecliptic-scada-geomap.jpg",
-        "images/portfolio/ecliptic-scada-charts.jpg",
-        "images/portfolio/ecliptic-scada-log.jpg",
+        "images/portfolio/ecliptic-scada-schema.png",
+        "images/portfolio/ecliptic-scada-geomap.png",
+        "images/portfolio/ecliptic-scada-charts.png",
+        "images/portfolio/ecliptic-scada-log.png",
         "images/portfolio/ecliptic-scada-real-life-1.jpg"
     ],
     "author": "LLC NPP \"Yugpromavtomatizacia\"",
-    "website": "https://ugpa.ru",
+    "website": "https://www.ugpa.ru",
     "license": "Proprietary"
 }
