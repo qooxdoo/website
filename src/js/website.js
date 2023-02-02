@@ -14,6 +14,11 @@ $(function() {
   }, function() {
     $(this).removeClass("nav-hovered");
   });
+
+  // Check if mobile and remove links from top level nav buttons because hovering doesn't work on mobile devices
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $("nav > ul > li > a").removeAttr("href");
+  }
   
   /*
    * Scroll To Top
